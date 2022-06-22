@@ -1,4 +1,5 @@
 site_name: nsi_terminale_bcp_ligny
+site_url: "https://davidjannel.github.io/nsi_tale_bcp_ligny/"
 
 theme:
   name: material
