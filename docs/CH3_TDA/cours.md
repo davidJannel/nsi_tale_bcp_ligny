@@ -1,7 +1,8 @@
-# CH3 : Structures de données
+# CH3 : Structures de données - Listes et dictionnaires
 
 ??? note "Programme officiel"
     ![image](img/prog_off.png){: .center}
+    ![image](img/BO2.png){: .center}
 
 Le langage Python dispose, comme tous les langages de haut niveau, d'un ensemble de types simples et de types structurés vus dans le programme de première : nombres, booléens, chaînes de caractères, tuples, tableaux, dictionnaires ...
 Ces types de bases sont appellés **types concrets**. Cette année, comme nous allons manipuler des données plus complexes que des simples nombres, on va créer des structures de données plus complexes. Pour définir ces structures, on utilise des **types abstraits de données**.
@@ -9,7 +10,7 @@ Ces types de bases sont appellés **types concrets**. Cette année, comme nous a
 ## 1. Type abstrait de données
 
 ### 1.1 Interface
-Un **type abstrait** est caractérisé par une **interface de programmation**. L'interface, c'est l'ensemble des opérations qui vont permettre de manipuler les données.
+Un **type abstrait** est caractérisé par une **interface de programmation**. L'interface, c'est l'ensemble des **opérations** ou **primitives** qui vont permettre de manipuler les données.
 
 On distingue :
 - les **constructeurs** qui permettent de créer une nouvelle structure de données.
@@ -77,16 +78,161 @@ En première, on utilise des objets de type `list` pour manipuler des données. 
 Voici les différents types abstraits que l'on va étudier cette année.
 ![image](img/tda.png){: .center}
 
+En informatique comme dans la vie courante, il est conseillé d'adapter sa manière de stocker et de traiter des données en fonction de la nature de celles-ci :
+
+- Le serveur d'un café, chargé de transporter les boissons du comptoir aux tables des clients, n'utilisera pas un sac en plastique pour faire le transport : il préfèrera un plateau. 
+- Le chercheur de champignons, lui, n'utilisera pas un plateau pour stocker ses trouvailles : il préfèrera un panier.
+- Pour stocker des chaussettes, on préfèrera les entasser dans un tiroir (après les avoir appairées), plutôt que de les suspendre à des cintres. 
+
+De même en informatique, pour chaque type de données, pour chaque utilisation prévue, une structure particulière de données se revèlera (peut-être) plus adaptée qu'une autre.
+
+Intéressons nous par exemple aux **données linéaires**. Ce sont des données qui ne comportent pas de *hiérarchie* : toutes les données sont de la même nature et ont le même rôle. 
+Par exemple, un relevé mensuel de températures, la liste des élèves d'une classe, un historique d'opérations bancaires... 
+
+Ces données sont «plates», n'ont pas de sous-domaines : la structure de **liste** paraît parfaitement adaptée. 
+
+Lorsque les données de cette liste sont en fait des couples (comme dans le cas d'une liste de noms/numéros de téléphone), alors la structure la plus adaptée est sans doute celle du **dictionnaire**.
+
+Les listes et les dictionnaires sont donc des exemples de structures de **données linéaires**.
+
 
 ## 2. Les listes
+### 2.1 Définitions générales
+Une liste est un ensemble ordonné d'objets. Généralement, ces données seront de même type, mais ce n'est pas structurellement obligatoire.
 
-## 3. Les piles
+![image](img/linked.png){: .center width=40%}
 
-## 4. Les files
+Lorsque l'implémentation de la liste fait apparaître une chaîne de valeurs, chacune pointant vers la suivante, on dit que la liste est une liste **chaînée**.
+
+![image](img/listechainee.png){: .center}
+
+L'interface minimale d'une liste est :
+
+- **constructeur** : `creer_liste()` qui retourne une liste vide.
+- **accesseur** : `liste_vide(l)` qui retourne `True` si la liste l est vide.
+- **opérateur** : `inserer(e, l)` qui insère l'élément `e` dans la liste `l` et retourne une nouvelle liste.
+- **accesseur** : `tete(l)` qui retourne l'élément en tête de liste (si elle n'est pas vide).
+- **accesseur** : `queue(l)` qui retourne la liste privée de son premier élément (la tête)(si elle n'est pas vide).
+- **itérateur** : `elements_liste(l)` qui retourne un tableau contenant les éléments de la liste `l`, que l'on peut ensuite énumérer avec une boucle for.
+
+### 2.2 Exemple d'implémentation par des tuples
+On peut implémenter une liste en Python en utilisant des tuples. Une liste sera représentée par un tuple `(tete, queue)`. `tete` est le premier élément de la liste et `queue` est le reste de la liste, qui est elle même une liste. C'est récursif.
+
+On peut utiliser la liste de la manière suivante :
+```python linenums='1'
+>>> liste = creer_liste()
+>>> liste = inserer("Alice", liste)
+>>> liste = inserer("Bob", liste)
+>>> liste = inserer("Charlie", liste)
+>>> print(tete(liste))
+Charlie
+>>> print(queue(liste))
+("Bob", ("Alice", ()))
+>>>for elt in elements_liste(liste):
+        print(elt)
+Charlie
+Bob
+Alice
+```
+
+L'état de la liste après la ligne 4 est :
+```python
+("Charlie", ("Bob", ("Alice", ())))
+```
+Soit :
+
+![image](img/liste_cours.png)
+
+Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier [listes_cours.py](listes_cours.py).
+
+#### Le constructeur : création de la liste
+!!! question "Exercice"
+    === "Énoncé"
+        Créer une fonction `creer_liste` qui ne prend pas d'argument et qui renvoie un tuple.
+    === "Solution"
+        ```python
+        def creer_liste():
+            return ()
+        ```
+
+#### Un accesseur : savoir si la liste est vide
+!!! question "Exercice"
+    === "Énoncé"
+        Créer une fonction `liste_vide` qui prend en argument une liste et qui renvoie `True` si la liste est vide.
+    === "Solution"
+        ```python
+        def liste_vide(liste):
+            return liste == ()
+        ```
+
+#### Un opérateur : insertion d'un élément
+!!! question "Exercice"
+    === "Énoncé"
+        Créer une fonction `inserer` qui prend en argument un élément et une liste et qui renvoie la liste.
+    === "Aides"
+        L'élément est ajouté en tête de liste et la liste vient en queue.
+    === "Solution"
+        ```python
+        def inserer(elt, liste):
+            return (elt, liste)
+        ```
+
+#### Des accesseurs :
+!!! question "Exercice"
+    === "Énoncé"
+        Créer deux fonctions :
+
+        - `tete` qui prend en argument une liste et qui renvoie l'élément en tête de liste.
+        - `queue` qui prend en argument une liste et qui renvoie la liste privée de sa tête.
+    === "Aides"
+        Vérifier pour les deux fonctions que la liste passée en argument n'est pas vide avec un `assert`.
+    === "Solution"
+        ```python
+        def tete(liste):
+            assert not liste_vide(liste), "liste vide"
+            return liste[0]
+
+        def queue(liste):
+            assert not liste_vide(liste), 'liste vide'
+            return liste[1]
+        ```
+
+#### Un itérateur : lister les éléments présents dans la liste
+!!! question "Exercice"
+    === "Énoncé"
+        Créer une fonction `elements_liste` qui prend en argument une liste et qui renvoie un tableau contenant les éléments de la liste.
+    === "Aides"
+        La fonction doit retourner un tableau.
+
+        Utiliser une boucle while pour parcourir la liste.
+    === "Solution"
+        ```python
+        def elements_liste(liste):
+            tab_iter = []
+            while not liste_vide(liste):
+                tab_iter.append(tete(liste))
+                liste = queue(liste)
+            return tab_iter
+        ```
+
+#### Étendre l'interface
+On peut ajouter un accesseur `taille` qui retourne le nombre d'éléments de la liste.
+!!! question "Exercice"
+    === "Énoncé"
+        Créer une fonction `taille` qui prend en argument une liste et qui renvoie le nombre d'éléments de la liste.
+    === "Solution"
+        ```python
+        def taille(liste):
+            nb = 0
+            while not liste_vide(liste):
+                nb = nb + 1
+                liste = queue(liste)
+            return nb
+        ```
 
 
-## 5. Les dictionnaires
-### 5.1 tableau associatif
+## 3. Les dictionnaires
+### 3.1 tableau associatif
 Les dictionnaires ont déjà été étudiés en classe de première. Pour rappel, ce type de données,
 aussi appelé **tableau associatif** , permet de stocker des **valeurs** et d'y accéder au moyen d'une **clé** ,
 contrairement au tableau qui permet d'accéder à une donnée au moyen d'un indice .
@@ -112,7 +258,7 @@ valeurs. Par exemple avec le dictionnaire que nous avons créé précédemment d
 ```"Nom" in dico``` renverra `True` alors que ```"Jannel" in dico``` renverra `False` . Dans un dictionnaire, 
 les clés et les valeurs ne jouent donc pas du tout le même rôle et ne sont pas interchangeables.
 
-### 5.2 Tables de hachage et clés
+### 3.2 Tables de hachage et clés
 Une clé peut être d'un autre type que chaîne de caractère, du moment que c'est un objet
 non mutable , c'est à dire qui ne peut pas être modifié. Une clé ne peut pas être une liste
 par exemple car une liste est un objet mutable que l'on peut modifier, par exemple au travers
@@ -130,7 +276,7 @@ Le type `list` n'est pas pas **hashable** . Mais qu'est-ce que le hachage ?
 
 [![Watch the video](img/hachage.jpeg){ width=50% ; align=center}](https://youtu.be/IhJo8sXLfVw)
 
-### 5.3 Implémentation d'un type *dictionnaire* à l'aide d'une table de hachage
+### 3.3 Implémentation d'un type *dictionnaire* à l'aide d'une table de hachage
 #### Présentation du problème
 Ici on ne veut pas utiliser directement le type `dict` de Python. Une implémentation simple consiste à créer une liste de tuples `(cle, valeur)`.
 
@@ -151,7 +297,7 @@ def hachage(cle):
     return code % HTAILLE
 ```
 !!! question "Question"
-    === "Énoncé"
+    === "Question"
         Quel soucis peut appaître avec une telle fonction de hachage ?
     === "Réponse"
         Il est possible que deux clés différentes aient le même code de hachage. On appelle cela une **collision**.
@@ -159,11 +305,13 @@ def hachage(cle):
         Une méthode pour traiter ces collisions, consiste à stocker dans chaque élément de la table de hachage, une liste des tuples `(cle, valeur)`
         qui on le même code de hachage. C'est cette implémentation qui vous est proposée ci-dessous.
 
+        Vous pouvez tester la fonction en prenant HTAILLE = 7 et deux clés comme "Alice" et "Bob". La fonction renvoie 2 pour les deux clés. 
+
 #### Le constructeur : Création du dictionnaire
 !!! question "Exercice"
     === "Énoncé"
         Créer une fonction `creer_dico` qui ne prend pas d'argument et qui renvoie un tableau contenant `HTAILLE` cases remplies avec `None`.
-    === "Réponse"
+    === "Solution"
         ```python
         def creer_dico():
             return [None] * HTAILLE
@@ -193,7 +341,7 @@ def hachage(cle):
         Créer une fonction `valeur_cle` qui prend en arguments `dico` et `cle`. Et qui retourne la valeur associée à la clé dans le dictionnaire `dico`.
     === "Aides"
         Vérifier que le résultat de la fonction de hachage, appliquée à la clé, correspond à une liste sinon retourner `None`.
-
+        
         La fonction `elements_liste` permet de récupérer une liste de tous les tuples présents dans une liste.
 
     === "Solution"
@@ -210,9 +358,58 @@ def hachage(cle):
         ```
 
 #### Un itérateur : lister les clés présentes dans un dictionnaire
+!!! question "Exercice"
+    === "Énoncé"
+        Créer une fonction `cle_dico` qui prend en arguments `dico`. Et qui retourne la liste des clés présentes dans le dictionnaire `dico`.
+    === "Aides"
+        La fonction doit retourner un tableau de clés.
+        
+        La fonction `elements_liste` permet de récupérer une liste de tous les tuples `(cle, valeur)` présents dans une liste.
+
+    === "Solution"
+        ```python
+        def cles_dico(dico):
+            tab_cles = []
+            for h in range(len(dico)):
+                if dico[h] != None:
+                    for (c, v) in elements_liste(dico[h]):
+                        tab_cles.append(c)
+            return tab_cles
+        ```
+
 
 #### Étendre l'interface :
 L'objectif est d'ajouter une fonction permettant de connaitre le nombre d'éléments (couples) présents dans le dictionnaire.
 
+!!! question "Exercice"
+    === "Énoncé"
+        Créer une fonction `taille` qui prend en arguments `dico`. Et qui retourne le nombre d'éléments présents dans le dictionnaire `dico`.
+
+
+    === "Solution"
+        Une façon de procéder est de compter le nombre de clés présentes dans le tableau renvoyé par l'itérateur `cle_dico`.
+        ```python
+        def taille(dico):
+            return len(cles_dico(dico))
+        ```
+
 #### Utiliser l'interface :
-Créer une fonction moyenne qui retourne la moyenne des notes présentes dans un dictionnaire ou les clés seraient des noms d'élèves et la valeur associée la note. 
+Créer une fonction moyenne qui retourne la moyenne des notes présentes dans un dictionnaire ou les clés seraient des noms d'élèves et la valeur associée la note.
+!!! question "Exercice"
+    === "Énoncé"
+        Créer une fonction `moyenne` qui prend en arguments `dico`. Et qui retourne la moyenne des valeurs présentes dans le dictionnaire `dico`.
+    === "Aides"
+        Tester si le dictionnaire n'est pas vide.
+
+
+        Utiliser les fonctions `cle_dico`, `valeur_cle` et `taille` pour calculer la moyenne.
+
+    === "Solution"
+        ```python
+        def moyenne(dico):
+            assert cles_dico(dico) != [], "dictionnaire vide"
+            total = 0
+                for cle in cles_dico(dico):
+                    total = total + valeur_cle(dico, cle)
+            return total / taille(dico)
+        ```

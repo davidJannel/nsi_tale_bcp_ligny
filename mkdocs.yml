@@ -76,8 +76,12 @@ markdown_extensions:
 
 nav:
   - 'index': 'index.md'
-  - 'à propos': 'a_propos.md'
   - 'CH1 : Mise au point des programmes': 'CH1_map/cours.md'
+  - 'CH2 : La récursivité': 'CH2_recursivite/cours.md'
+  - 'CH3 : Structures de données - Listes et dictionnaires': 'CH3_TDA/cours.md'
+  - 'CH4 : Piles et files': 'CH4_piles_files/cours.md'
+  
+
 
 extra_javascript:
   - xtra/javascripts/interpreter.js
