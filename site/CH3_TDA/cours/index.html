@@ -15,7 +15,7 @@
     
     
       
-        <title>CH3 : Structures de données - nsi_terminale_bcp_ligny</title>
+        <title>CH3 : Structures de données - Listes et dictionnaires - nsi_terminale_bcp_ligny</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ch3-structures-de-donnees" class="md-skip">
+        <a href="#ch3-structures-de-donnees-listes-et-dictionnaires" class="md-skip">
           Aller au contenu
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CH3 : Structures de données
+              CH3 : Structures de données - Listes et dictionnaires
             
           </span>
         </div>
@@ -227,7 +227,19 @@
 
   <li class="md-tabs__item">
     <a href="./" class="md-tabs__link md-tabs__link--active">
-      CH3 : Structures de données
+      CH3 : Structures de données - Listes et dictionnaires
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../CH4_piles_files/cours/" class="md-tabs__link">
+      CH4 : Piles et files
     </a>
   </li>
 
@@ -329,12 +341,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          CH3 : Structures de données
+          CH3 : Structures de données - Listes et dictionnaires
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        CH3 : Structures de données
+        CH3 : Structures de données - Listes et dictionnaires
       </a>
       
         
@@ -409,8 +421,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-implementation-par-des-tuples" class="md-nav__link">
-    2.2 Implémentation par des tuples
+  <a href="#22-exemple-dimplementation-par-des-tuples" class="md-nav__link">
+    2.2 Exemple d'implémentation par des tuples
   </a>
   
 </li>
@@ -462,6 +474,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CH4_piles_files/cours/" class="md-nav__link">
+        CH4 : Piles et files
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -477,7 +504,7 @@
                 
 
 
-<h1 id="ch3-structures-de-donnees">CH3 : Structures de données<a class="headerlink" href="#ch3-structures-de-donnees" title="Permanent link">⚓︎</a></h1>
+<h1 id="ch3-structures-de-donnees-listes-et-dictionnaires">CH3 : Structures de données - Listes et dictionnaires<a class="headerlink" href="#ch3-structures-de-donnees-listes-et-dictionnaires" title="Permanent link">⚓︎</a></h1>
 <details class="note">
 <summary>Programme officiel</summary>
 <p><img alt="image" class="center" src="../img/prog_off.png" />
@@ -487,7 +514,7 @@
 Ces types de bases sont appellés <strong>types concrets</strong>. Cette année, comme nous allons manipuler des données plus complexes que des simples nombres, on va créer des structures de données plus complexes. Pour définir ces structures, on utilise des <strong>types abstraits de données</strong>.</p>
 <h2 id="1-type-abstrait-de-donnees">1. Type abstrait de données<a class="headerlink" href="#1-type-abstrait-de-donnees" title="Permanent link">⚓︎</a></h2>
 <h3 id="11-interface">1.1 Interface<a class="headerlink" href="#11-interface" title="Permanent link">⚓︎</a></h3>
-<p>Un <strong>type abstrait</strong> est caractérisé par une <strong>interface de programmation</strong>. L'interface, c'est l'ensemble des opérations qui vont permettre de manipuler les données.</p>
+<p>Un <strong>type abstrait</strong> est caractérisé par une <strong>interface de programmation</strong>. L'interface, c'est l'ensemble des <strong>opérations</strong> ou <strong>primitives</strong> qui vont permettre de manipuler les données.</p>
 <p>On distingue :
 - les <strong>constructeurs</strong> qui permettent de créer une nouvelle structure de données.
 - les <strong>opérateurs</strong> qui permettent de modifier la structure. On peut par exemple ajouter ou retirer des données.
@@ -618,7 +645,7 @@ Par exemple, un relevé mensuel de températures, la liste des élèves d'une cl
 <li><strong>accesseur</strong> : <code>queue(l)</code> qui retourne la liste privée de son premier élément (la tête)(si elle n'est pas vide).</li>
 <li><strong>itérateur</strong> : <code>elements_liste(l)</code> qui retourne un tableau contenant les éléments de la liste <code>l</code>, que l'on peut ensuite énumérer avec une boucle for.</li>
 </ul>
-<h3 id="22-implementation-par-des-tuples">2.2 Implémentation par des tuples<a class="headerlink" href="#22-implementation-par-des-tuples" title="Permanent link">⚓︎</a></h3>
+<h3 id="22-exemple-dimplementation-par-des-tuples">2.2 Exemple d'implémentation par des tuples<a class="headerlink" href="#22-exemple-dimplementation-par-des-tuples" title="Permanent link">⚓︎</a></h3>
 <p>On peut implémenter une liste en Python en utilisant des tuples. Une liste sera représentée par un tuple <code>(tete, queue)</code>. <code>tete</code> est le premier élément de la liste et <code>queue</code> est le reste de la liste, qui est elle même une liste. C'est récursif.</p>
 <p>On peut utiliser la liste de la manière suivante :
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -650,8 +677,8 @@ Par exemple, un relevé mensuel de températures, la liste des élèves d'une cl
 <p>L'état de la liste après la ligne 4 est :
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="p">())))</span>
 </code></pre></div>
-Soit :
-<img alt="image" src="../img/liste_cours.png" /></p>
+Soit :</p>
+<p><img alt="image" src="../img/liste_cours.png" /></p>
 <p>Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier <a href="../listes_cours.py">listes_cours.py</a>.</p>
 <h4 id="le-constructeur-creation-de-la-liste">Le constructeur : création de la liste<a class="headerlink" href="#le-constructeur-creation-de-la-liste" title="Permanent link">⚓︎</a></h4>
 <div class="admonition question">
@@ -691,7 +718,7 @@ Soit :
 <div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Aides</label><label for="__tabbed_4_3">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Créer une fonction <code>inserer</code> qui prend en argument une élément et une liste et qui renvoie la liste.</p>
+<p>Créer une fonction <code>inserer</code> qui prend en argument un élément et une liste et qui renvoie la liste.</p>
 </div>
 <div class="tabbed-block">
 <p>L'élément est ajouté en tête de liste et la liste vient en queue.</p>
@@ -721,11 +748,11 @@ Soit :
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tete</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="ow">not</span> <span class="n">liste_vide</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;liste vide&quot;</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">liste_vide</span><span class="p">(</span><span class="n">liste</span><span class="p">),</span> <span class="s2">&quot;liste vide&quot;</span>
     <span class="k">return</span> <span class="n">liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">queue</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="ow">not</span> <span class="n">liste_vide</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;liste vide&#39;</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">liste_vide</span><span class="p">(</span><span class="n">liste</span><span class="p">),</span> <span class="s1">&#39;liste vide&#39;</span>
     <span class="k">return</span> <span class="n">liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
 </div>
@@ -1017,6 +1044,21 @@ qui on le même code de hachage. C'est cette implémentation qui vous est propos
           </div>
         </a>
       
+      
+        
+        <a href="../../CH4_piles_files/cours/" class="md-footer__link md-footer__link--next" aria-label="Suivant: CH4 : Piles et files" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              CH4 : Piles et files
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

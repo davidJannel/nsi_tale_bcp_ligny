@@ -25,11 +25,11 @@ def inserer(elt, liste):
     return (elt, liste)
 
 def tete(liste):
-    assert not liste_vide(liste) == True, "liste vide"
+    assert not liste_vide(liste), "liste vide"
     return liste[0]
 
 def queue(liste):
-    assert not liste_vide(liste) == True, 'liste vide'
+    assert not liste_vide(liste), 'liste vide'
     return liste[1]
 
 def elements_liste(liste):
