@@ -230,6 +230,10 @@ On peut ajouter un accesseur `taille` qui retourne le nombre d'éléments de la 
             return nb
         ```
 
+### 2.3 Autre implémentation et utilisation des listes
+Travail à réaliser sur le notebook TD_listes.ypnb
+
+Il vous est conseillé de faire et conserver un fichier (module) nommé listes.py avec l'implémentation utilisant la POO.
 
 ## 3. Les dictionnaires
 ### 3.1 tableau associatif

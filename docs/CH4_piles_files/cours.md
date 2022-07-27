@@ -66,7 +66,7 @@ Son interface minimale est :
 ### 1.3 Exemple d'implémentation
 Une implémentation possible consiste à utiliser les tableaux dynamiques (type `list` de Python). Pour réaliser notre implémentation, on utilisera les méthodes `append`, `pop` ...
 
-Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier [piles_cours.py](piles_cours.py).
+Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier [piles_cours.py](data/piles_cours.py).
 
 #### Le constructeur : création de la pile
 !!! question "Exercice"
@@ -154,9 +154,82 @@ On peut ajouter un accesseur `taille` qui retourne le nombre d'éléments de la 
             return len(pile)
         ```
 
+### 1.4 TD - Implémentation utilisant la POO et utilisation des piles
+Travail à réaliser sur le notebook TD_piles.ypnb
+
+Il vous est conseillé de faire et conserver un fichier (module) nommé piles.py avec l'implémentation utilisant la POO.
+
+### 1.5 TP - Réalisation d'une calculatrice
+Dans les années 90, les calculatrices HP étaient très réputées dans le milieu scientifique pour la richesse de leures fonctionnalités. Elles possédaient une autre particularité : elles utilisaient la notation dite "polonaise inversée" **NPI** pour effectuer les calculs. Cela signifie que l'on entrait d'abord les éléments pour faire le calcul puis ensuite l'opérateur. Par exemple, pour effectuer l'opération 4 + 3 on entrait successivement 4 puis 3 et enfin +.
+
+![image](img/hp28c.jpg)
+
+On peut donner encore d'autres exemples : pour calculer `(2+3)*11` , on entrera la chaine de caractère "`2 3 + 11 *`". On aurait d'ailleurs le même résultat avec la chaine de caractère "`11 2 3 + *`" qui représenterait `11*(2+3)`.
+
+L'algorithme pour calculer le résultat d'un calcul en notation polonaise inversé utilise une pile. On procéde de la façon suivante. Pour chaque élément de l'expression :
+
+- si c'est un nombre on le place dans la pile.
+- si c'est un opérateur, on récupère les deux nombres au sommet de la pile et on leur applique l'opérateur (le premier sommet est à droite de l'opérateur, ce qui est important pour les soustractions et les divisions).
+
+Vous allez réaliser une calculatrice NPI à partir de la classe de pile que nous avons fait précedemment.
+
+!!! question "Travail à faire"
+    === "Consignes"
+        - Pour faire une calculatrice NPI, vous compléterez la fonction `calcule`qui prend en entrée une chaine de caractère notée `expression` qui est une expression en notation polonaise inversée, et qui renvoi en sortie la valeur du résultat. Si la chaine est bien formée, la pile ne contient plus qu'un seul élément qui est le résultat. Si la chaine est mal formée, la fonction doit renvoyer `None`.
+
+        - Pour faciliter votre travail, la chaine est séparée en élements dans un tableau grâce à split, et il n'y a plus qu'à boucler sur le tableau.
+
+        - Des assertions ont été fournies pour vous aider à vérifier votre travail.
+
+    === "Code à compléter"
+        ```python linenums='1'
+        class cellule:
+            """ Classe qui modélise une cellule dans une structure linéaire """
+            def __init__(self,element):
+                self.contenu = element
+                self.suivant = None
+
+        class pile:
+            """ Classe qui implémente une pile"""
+            def __init__(self):
+                self.sommet = None
+
+            def estVide(self):
+                return self.sommet == None
+
+            def empile(self,element):
+                nouveau = cellule(element)
+                nouveau.suivant = self.sommet
+                self.sommet = nouveau
+
+            def depile(self):
+                valeur = self.sommet.contenu
+                self.sommet = self.sommet.suivant
+                return valeur
+
+            def affiche(self):
+                pointeur = self.sommet
+                while pointeur != None :
+                    print(pointeur.contenu)
+                    pointeur = pointeur.suivant
+
+        def calcule(expression):
+            valeur = None
+            tableau = expression.split()
+            ### Mettez votre code ici
+
+            return valeur
+
+
+        assert calcule('2 3 + 11 *') == 55, "erreur sur le premier calcul"
+        assert calcule('2 5 * 7  +') == 17, "erreur sur le second calcul"
+        assert calcule('8 2 / 4 - ') == 0, "erreur sur le troisième calcul"
+        assert calcule('1 2 3 4 + * +') == 15 , "erreur sur le quatrième calcul"
+        assert calcule("1 2 3 + ") == None," chaine mal formée mais valeur retournée"
+        ```
 
 ## 2. Les files
-Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier [files_cours.py](files_cours.py).
+Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier [files_cours.py](data/files_cours.py).
 
 ### 2.1 Qu'est ce qu'une file ?
 ![image](img/queue.png){: .center width=40%}
@@ -217,7 +290,7 @@ Son interface minimale est :
 ### 2.3 Exemple d'impléméntation
 Comme pour les piles, une implémentation possible consiste à utiliser les tableaux dynamiques (type `list` de Python).
 
-Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier [files_cours.py](files_cours.py).
+Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier [files_cours.py](data/files_cours.py).
 
 #### Le constructeur : création de la file
 !!! question "Exercice"
@@ -300,6 +373,10 @@ On peut ajouter un accesseur `taille` qui retourne le nombre d'éléments de la 
             return len(file)
         ```
 
+### 2.4 TD - Implémentation utilisant la POO et utilisation des files
+Travail à réaliser à partir du [TD_files.pdf](data/TD_files.pdf) en créant un notebook noté : TD_files.ypnb
+
+Il vous est conseillé de faire et conserver un fichier (module) nommé files.py avec l'implémentation utilisant la POO.
 
 
 
