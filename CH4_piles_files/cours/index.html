@@ -408,6 +408,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#14-td-implementation-utilisant-la-poo-et-utilisation-des-piles" class="md-nav__link">
+    1.4 TD - Implémentation utilisant la POO et utilisation des piles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-tp-realisation-dune-calculatrice" class="md-nav__link">
+    1.5 TP - Réalisation d'une calculatrice
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -438,6 +452,13 @@
           <li class="md-nav__item">
   <a href="#23-exemple-dimplementation" class="md-nav__link">
     2.3 Exemple d'impléméntation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-td-implementation-utilisant-la-poo-et-utilisation-des-files" class="md-nav__link">
+    2.4 TD - Implémentation utilisant la POO et utilisation des files
   </a>
   
 </li>
@@ -537,7 +558,7 @@ les éléments sont empilés les uns au-dessus des autres, et on ne peut toujour
 <p><img alt="" class="center" src="../img/history.png" /></p>
 <h3 id="13-exemple-dimplementation">1.3 Exemple d'implémentation<a class="headerlink" href="#13-exemple-dimplementation" title="Permanent link">⚓︎</a></h3>
 <p>Une implémentation possible consiste à utiliser les tableaux dynamiques (type <code>list</code> de Python). Pour réaliser notre implémentation, on utilisera les méthodes <code>append</code>, <code>pop</code> ...</p>
-<p>Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier <a href="../piles_cours.py">piles_cours.py</a>.</p>
+<p>Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier <a href="../data/piles_cours.py">piles_cours.py</a>.</p>
 <h4 id="le-constructeur-creation-de-la-pile">Le constructeur : création de la pile<a class="headerlink" href="#le-constructeur-creation-de-la-pile" title="Permanent link">⚓︎</a></h4>
 <div class="admonition question">
 <p class="admonition-title">Exercice</p>
@@ -672,8 +693,129 @@ les éléments sont empilés les uns au-dessus des autres, et on ne peut toujour
 </div>
 </div>
 </div>
+<h3 id="14-td-implementation-utilisant-la-poo-et-utilisation-des-piles">1.4 TD - Implémentation utilisant la POO et utilisation des piles<a class="headerlink" href="#14-td-implementation-utilisant-la-poo-et-utilisation-des-piles" title="Permanent link">⚓︎</a></h3>
+<p>Travail à réaliser sur le notebook TD_piles.ypnb</p>
+<p>Il vous est conseillé de faire et conserver un fichier (module) nommé piles.py avec l'implémentation utilisant la POO.</p>
+<h3 id="15-tp-realisation-dune-calculatrice">1.5 TP - Réalisation d'une calculatrice<a class="headerlink" href="#15-tp-realisation-dune-calculatrice" title="Permanent link">⚓︎</a></h3>
+<p>Dans les années 90, les calculatrices HP étaient très réputées dans le milieu scientifique pour la richesse de leures fonctionnalités. Elles possédaient une autre particularité : elles utilisaient la notation dite "polonaise inversée" <strong>NPI</strong> pour effectuer les calculs. Cela signifie que l'on entrait d'abord les éléments pour faire le calcul puis ensuite l'opérateur. Par exemple, pour effectuer l'opération 4 + 3 on entrait successivement 4 puis 3 et enfin +.</p>
+<p><img alt="image" src="../img/hp28c.jpg" /></p>
+<p>On peut donner encore d'autres exemples : pour calculer <code>(2+3)*11</code> , on entrera la chaine de caractère "<code>2 3 + 11 *</code>". On aurait d'ailleurs le même résultat avec la chaine de caractère "<code>11 2 3 + *</code>" qui représenterait <code>11*(2+3)</code>.</p>
+<p>L'algorithme pour calculer le résultat d'un calcul en notation polonaise inversé utilise une pile. On procéde de la façon suivante. Pour chaque élément de l'expression :</p>
+<ul>
+<li>si c'est un nombre on le place dans la pile.</li>
+<li>si c'est un opérateur, on récupère les deux nombres au sommet de la pile et on leur applique l'opérateur (le premier sommet est à droite de l'opérateur, ce qui est important pour les soustractions et les divisions).</li>
+</ul>
+<p>Vous allez réaliser une calculatrice NPI à partir de la classe de pile que nous avons fait précedemment.</p>
+<div class="admonition question">
+<p class="admonition-title">Travail à faire</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Consignes</label><label for="__tabbed_9_2">Code à compléter</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>
+<p>Pour faire une calculatrice NPI, vous compléterez la fonction <code>calcule</code>qui prend en entrée une chaine de caractère notée <code>expression</code> qui est une expression en notation polonaise inversée, et qui renvoi en sortie la valeur du résultat. Si la chaine est bien formée, la pile ne contient plus qu'un seul élément qui est le résultat. Si la chaine est mal formée, la fonction doit renvoyer <code>None</code>.</p>
+</li>
+<li>
+<p>Pour faciliter votre travail, la chaine est séparée en élements dans un tableau grâce à split, et il n'y a plus qu'à boucler sur le tableau.</p>
+</li>
+<li>
+<p>Des assertions ont été fournies pour vous aider à vérifier votre travail.</p>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">cellule</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Classe qui modélise une cellule dans une structure linéaire &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">element</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contenu</span> <span class="o">=</span> <span class="n">element</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">suivant</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">class</span> <span class="nc">pile</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Classe qui implémente une pile&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">estVide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span> <span class="o">==</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">empile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">element</span><span class="p">):</span>
+        <span class="n">nouveau</span> <span class="o">=</span> <span class="n">cellule</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="n">nouveau</span><span class="o">.</span><span class="n">suivant</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span> <span class="o">=</span> <span class="n">nouveau</span>
+
+    <span class="k">def</span> <span class="nf">depile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">valeur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span><span class="o">.</span><span class="n">contenu</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span><span class="o">.</span><span class="n">suivant</span>
+        <span class="k">return</span> <span class="n">valeur</span>
+
+    <span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pointeur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span>
+        <span class="k">while</span> <span class="n">pointeur</span> <span class="o">!=</span> <span class="kc">None</span> <span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">pointeur</span><span class="o">.</span><span class="n">contenu</span><span class="p">)</span>
+            <span class="n">pointeur</span> <span class="o">=</span> <span class="n">pointeur</span><span class="o">.</span><span class="n">suivant</span>
+
+<span class="k">def</span> <span class="nf">calcule</span><span class="p">(</span><span class="n">expression</span><span class="p">):</span>
+    <span class="n">valeur</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">tableau</span> <span class="o">=</span> <span class="n">expression</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="c1">### Mettez votre code ici</span>
+
+    <span class="k">return</span> <span class="n">valeur</span>
+
+
+<span class="k">assert</span> <span class="n">calcule</span><span class="p">(</span><span class="s1">&#39;2 3 + 11 *&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">55</span><span class="p">,</span> <span class="s2">&quot;erreur sur le premier calcul&quot;</span>
+<span class="k">assert</span> <span class="n">calcule</span><span class="p">(</span><span class="s1">&#39;2 5 * 7  +&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">17</span><span class="p">,</span> <span class="s2">&quot;erreur sur le second calcul&quot;</span>
+<span class="k">assert</span> <span class="n">calcule</span><span class="p">(</span><span class="s1">&#39;8 2 / 4 - &#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;erreur sur le troisième calcul&quot;</span>
+<span class="k">assert</span> <span class="n">calcule</span><span class="p">(</span><span class="s1">&#39;1 2 3 4 + * +&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span> <span class="p">,</span> <span class="s2">&quot;erreur sur le quatrième calcul&quot;</span>
+<span class="k">assert</span> <span class="n">calcule</span><span class="p">(</span><span class="s2">&quot;1 2 3 + &quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">,</span><span class="s2">&quot; chaine mal formée mais valeur retournée&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="2-les-files">2. Les files<a class="headerlink" href="#2-les-files" title="Permanent link">⚓︎</a></h2>
-<p>Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier <a href="../files_cours.py">files_cours.py</a>.</p>
+<p>Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier <a href="../data/files_cours.py">files_cours.py</a>.</p>
 <h3 id="21-quest-ce-quune-file">2.1 Qu'est ce qu'une file ?<a class="headerlink" href="#21-quest-ce-quune-file" title="Permanent link">⚓︎</a></h3>
 <p><img alt="image" class="center" src="../img/queue.png" width="40%" /></p>
 <p>Une structure de <strong>file</strong> (penser à une file d'attente) est associée à la méthode <strong>FIFO</strong> (First In, First Out) :
@@ -690,7 +832,7 @@ les éléments sont enfilés les uns à la suite des autres, et on ne peut toujo
 <p><img alt="un bien joli gif" class="center" src="../img/giffile.webp" /></p>
 <div class="admonition example">
 <p class="admonition-title">Exercice : Utilisation de l'interface</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Énoncé</label><label for="__tabbed_9_2">Correction</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Énoncé</label><label for="__tabbed_10_2">Correction</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>On considère l'enchaînement d'opérations ci-dessous. Écrire à chaque étape l'état de la file <code>f</code> et la valeur éventuellement renvoyée.
@@ -732,11 +874,11 @@ La convention choisie est : on enfilera <strong>à droite</strong> et on défile
 </ul>
 <h3 id="23-exemple-dimplementation">2.3 Exemple d'impléméntation<a class="headerlink" href="#23-exemple-dimplementation" title="Permanent link">⚓︎</a></h3>
 <p>Comme pour les piles, une implémentation possible consiste à utiliser les tableaux dynamiques (type <code>list</code> de Python).</p>
-<p>Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier <a href="../files_cours.py">files_cours.py</a>.</p>
+<p>Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier <a href="../data/files_cours.py">files_cours.py</a>.</p>
 <h4 id="le-constructeur-creation-de-la-file">Le constructeur : création de la file<a class="headerlink" href="#le-constructeur-creation-de-la-file" title="Permanent link">⚓︎</a></h4>
 <div class="admonition question">
 <p class="admonition-title">Exercice</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Énoncé</label><label for="__tabbed_10_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Énoncé</label><label for="__tabbed_11_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Créer une fonction <code>creer_file</code> qui ne prend pas d'argument et qui renvoie un tableau vide (type <code>list</code>).</p>
@@ -752,7 +894,7 @@ La convention choisie est : on enfilera <strong>à droite</strong> et on défile
 <h4 id="un-accesseur-savoir-si-la-file-est-vide">Un accesseur : savoir si la file est vide<a class="headerlink" href="#un-accesseur-savoir-si-la-file-est-vide" title="Permanent link">⚓︎</a></h4>
 <div class="admonition question">
 <p class="admonition-title">Exercice</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Énoncé</label><label for="__tabbed_11_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Énoncé</label><label for="__tabbed_12_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Créer une fonction <code>file_vide</code> qui prend en argument une file et qui renvoie <code>True</code> si la file est vide.</p>
@@ -768,7 +910,7 @@ La convention choisie est : on enfilera <strong>à droite</strong> et on défile
 <h4 id="un-operateur-ajout-dun-element-en-queue-de-file">Un opérateur : ajout d'un élément en queue de file<a class="headerlink" href="#un-operateur-ajout-dun-element-en-queue-de-file" title="Permanent link">⚓︎</a></h4>
 <div class="admonition question">
 <p class="admonition-title">Exercice</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="12:3"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Énoncé</label><label for="__tabbed_12_2">Aides</label><label for="__tabbed_12_3">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Énoncé</label><label for="__tabbed_13_2">Aides</label><label for="__tabbed_13_3">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Créer une fonction <code>enfiler</code> qui prend en argument un élément et une liste et place cet élément en queue de file.</p>
@@ -787,7 +929,7 @@ La convention choisie est : on enfilera <strong>à droite</strong> et on défile
 <h4 id="un-operateur-retirer-un-element-de-la-file">Un opérateur : retirer un élément de la file<a class="headerlink" href="#un-operateur-retirer-un-element-de-la-file" title="Permanent link">⚓︎</a></h4>
 <div class="admonition question">
 <p class="admonition-title">Exercice</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Énoncé</label><label for="__tabbed_13_2">Aides</label><label for="__tabbed_13_3">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:3"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Énoncé</label><label for="__tabbed_14_2">Aides</label><label for="__tabbed_14_3">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Créer une fonction <code>defiler</code> qui prend en argument une file, retire et retourne la tête de la file f (si elle n'est pas vide).</p>
@@ -808,7 +950,7 @@ La convention choisie est : on enfilera <strong>à droite</strong> et on défile
 <h4 id="un-accesseur-connaitre-la-tete-de-la-file">Un accesseur : Connaître la tete de la file<a class="headerlink" href="#un-accesseur-connaitre-la-tete-de-la-file" title="Permanent link">⚓︎</a></h4>
 <div class="admonition question">
 <p class="admonition-title">Exercice</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="14:3"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Énoncé</label><label for="__tabbed_14_2">Aides</label><label for="__tabbed_14_3">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:3"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><input id="__tabbed_15_3" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Énoncé</label><label for="__tabbed_15_2">Aides</label><label for="__tabbed_15_3">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Créer une fonction <code>tete_file</code> qui prend en argument une file et renvoie simplement l'élément situé en tête de la file (si elle n'est pas vide).</p>
@@ -831,7 +973,7 @@ La convention choisie est : on enfilera <strong>à droite</strong> et on défile
 <h4 id="un-iterateur-lister-les-elements-presents-dans-la-file">Un itérateur : lister les éléments présents dans la file<a class="headerlink" href="#un-iterateur-lister-les-elements-presents-dans-la-file" title="Permanent link">⚓︎</a></h4>
 <div class="admonition question">
 <p class="admonition-title">Exercice</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Énoncé</label><label for="__tabbed_15_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Énoncé</label><label for="__tabbed_16_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Créer une fonction <code>elements_file</code> qui prend en argument une file et qui renvoie un tableau contenant les éléments de la file. Attention, le tableau doit contenir les éléments parcourus de la queue à la tête de la file.</p>
@@ -848,7 +990,7 @@ La convention choisie est : on enfilera <strong>à droite</strong> et on défile
 <p>On peut ajouter un accesseur <code>taille</code> qui retourne le nombre d'éléments de la file.</p>
 <div class="admonition question">
 <p class="admonition-title">Exercice</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Énoncé</label><label for="__tabbed_16_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Énoncé</label><label for="__tabbed_17_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Créer une fonction <code>taille</code> qui prend en argument une file et qui renvoie le nombre d'éléments de la file.</p>
@@ -861,6 +1003,9 @@ La convention choisie est : on enfilera <strong>à droite</strong> et on défile
 </div>
 </div>
 </div>
+<h3 id="24-td-implementation-utilisant-la-poo-et-utilisation-des-files">2.4 TD - Implémentation utilisant la POO et utilisation des files<a class="headerlink" href="#24-td-implementation-utilisant-la-poo-et-utilisation-des-files" title="Permanent link">⚓︎</a></h3>
+<p>Travail à réaliser à partir du <a href="../data/TD_files.pdf">TD_files.pdf</a> en créant un notebook noté : TD_files.ypnb</p>
+<p>Il vous est conseillé de faire et conserver un fichier (module) nommé files.py avec l'implémentation utilisant la POO.</p>
 
               
     <script src="../../js/ide.js"></script> 
