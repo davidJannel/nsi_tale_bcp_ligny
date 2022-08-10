@@ -13,7 +13,7 @@
     
     
       
-        <title>nsi_terminale_bcp_ligny</title>
+        <title>NSI Terminale - Ste Marie - Beaucamps Ligny</title>
       
     
     
@@ -27,6 +27,12 @@
     
     
     
+    <!-- favicons -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
+    <link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
     <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
@@ -35,10 +41,17 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-md5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 
     
       
     
+    
+      <link rel="stylesheet" href="/nsi_tale_bcp_ligny/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="/nsi_tale_bcp_ligny/xtra/stylesheets/pyoditeur.css">
     
     <script>__md_scope=new URL("/nsi_tale_bcp_ligny/",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -46,6 +59,11 @@
 
     
     
+
+
+<input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
+
+
   </head>
   
   
@@ -77,10 +95,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="/nsi_tale_bcp_ligny/." title="nsi_terminale_bcp_ligny" class="md-header__button md-logo" aria-label="nsi_terminale_bcp_ligny" data-md-component="logo">
+    <a href="/nsi_tale_bcp_ligny/." title="NSI Terminale - Ste Marie - Beaucamps Ligny" class="md-header__button md-logo" aria-label="NSI Terminale - Ste Marie - Beaucamps Ligny" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="/nsi_tale_bcp_ligny/xtra/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -90,7 +107,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            nsi_terminale_bcp_ligny
+            NSI Terminale - Ste Marie - Beaucamps Ligny
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -182,7 +199,7 @@
 
   <li class="md-tabs__item">
     <a href="/nsi_tale_bcp_ligny/." class="md-tabs__link">
-      index
+      Accueil
     </a>
   </li>
 
@@ -192,11 +209,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="/nsi_tale_bcp_ligny/CH1_map/cours/" class="md-tabs__link">
-      CH1 : Mise au point des programmes
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/nsi_tale_bcp_ligny/Langages%20et%20programmation/sommaire/" class="md-tabs__link">
+        Langages et programmation
+      </a>
+    </li>
+  
 
       
         
@@ -204,11 +225,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="/nsi_tale_bcp_ligny/CH2_recursivite/cours/" class="md-tabs__link">
-      CH2 : La récursivité
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/nsi_tale_bcp_ligny/Structures%20de%20donn%C3%A9es/sommaire/" class="md-tabs__link">
+        Structures de données
+      </a>
+    </li>
+  
 
       
         
@@ -216,11 +241,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="/nsi_tale_bcp_ligny/CH3_TDA/cours/" class="md-tabs__link">
-      CH3 : Structures de données - Listes et dictionnaires
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/nsi_tale_bcp_ligny/Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/sommaire/" class="md-tabs__link">
+        Architectures matérielles - OS - Réseaux
+      </a>
+    </li>
+  
 
       
         
@@ -228,11 +257,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="/nsi_tale_bcp_ligny/CH4_piles_files/cours/" class="md-tabs__link">
-      CH4 : Piles et files
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/nsi_tale_bcp_ligny/Algorithmique/sommaire/" class="md-tabs__link">
+        Algorithmique
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -258,13 +291,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/nsi_tale_bcp_ligny/." title="nsi_terminale_bcp_ligny" class="md-nav__button md-logo" aria-label="nsi_terminale_bcp_ligny" data-md-component="logo">
+    <a href="/nsi_tale_bcp_ligny/." title="NSI Terminale - Ste Marie - Beaucamps Ligny" class="md-nav__button md-logo" aria-label="NSI Terminale - Ste Marie - Beaucamps Ligny" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="/nsi_tale_bcp_ligny/xtra/logo.png" alt="logo">
 
     </a>
-    nsi_terminale_bcp_ligny
+    NSI Terminale - Ste Marie - Beaucamps Ligny
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -278,7 +310,7 @@
   
     <li class="md-nav__item">
       <a href="/nsi_tale_bcp_ligny/." class="md-nav__link">
-        index
+        Accueil
       </a>
     </li>
   
@@ -291,10 +323,85 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Langages et programmation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Langages et programmation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Langages et programmation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="/nsi_tale_bcp_ligny/CH1_map/cours/" class="md-nav__link">
-        CH1 : Mise au point des programmes
+      <a href="/nsi_tale_bcp_ligny/Langages%20et%20programmation/sommaire/" class="md-nav__link">
+        Sommaire
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/nsi_tale_bcp_ligny/Langages%20et%20programmation/CH1_map/cours/" class="md-nav__link">
+        CH1 Mise au point des programmes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/nsi_tale_bcp_ligny/Langages%20et%20programmation/CH2_recursivite/cours/" class="md-nav__link">
+        CH2 La récursivité
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/nsi_tale_bcp_ligny/Langages%20et%20programmation/CH11_modularite/cours/" class="md-nav__link">
+        CH11 Modularité - API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -306,10 +413,85 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Structures de données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Structures de données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Structures de données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="/nsi_tale_bcp_ligny/CH2_recursivite/cours/" class="md-nav__link">
-        CH2 : La récursivité
+      <a href="/nsi_tale_bcp_ligny/Structures%20de%20donn%C3%A9es/sommaire/" class="md-nav__link">
+        Sommaire
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/nsi_tale_bcp_ligny/Structures%20de%20donn%C3%A9es/CH3_TDA/cours/" class="md-nav__link">
+        CH3 Structures de données - Listes et dictionnaires
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/nsi_tale_bcp_ligny/Structures%20de%20donn%C3%A9es/CH4_piles_files/cours/" class="md-nav__link">
+        CH4 Piles et files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/nsi_tale_bcp_ligny/Structures%20de%20donn%C3%A9es/CH7_graphes/cours/" class="md-nav__link">
+        CH7 Graphes et parcours de graphes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -321,10 +503,99 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Architectures matérielles - OS - Réseaux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Architectures matérielles - OS - Réseaux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Architectures matérielles - OS - Réseaux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="/nsi_tale_bcp_ligny/CH3_TDA/cours/" class="md-nav__link">
-        CH3 : Structures de données - Listes et dictionnaires
+      <a href="/nsi_tale_bcp_ligny/Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/sommaire/" class="md-nav__link">
+        Sommaire
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/nsi_tale_bcp_ligny/Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH5_SOC/cours/" class="md-nav__link">
+        CH5 Systèmes sur puce
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/nsi_tale_bcp_ligny/Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH6_Processus/cours/" class="md-nav__link">
+        CH6 Gestion des processus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/nsi_tale_bcp_ligny/Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH8_Routage/cours/" class="md-nav__link">
+        CH8 Routage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/nsi_tale_bcp_ligny/Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH9_Cryptographie/cours/" class="md-nav__link">
+        CH9 Cryptographie - Sécurisation des communications
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -336,10 +607,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Algorithmique
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Algorithmique" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Algorithmique
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="/nsi_tale_bcp_ligny/CH4_piles_files/cours/" class="md-nav__link">
-        CH4 : Piles et files
+      <a href="/nsi_tale_bcp_ligny/Algorithmique/sommaire/" class="md-nav__link">
+        Sommaire
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/nsi_tale_bcp_ligny/Algorithmique/CH10_diviser/cours/" class="md-nav__link">
+        CH10 Diviser pour régner
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 

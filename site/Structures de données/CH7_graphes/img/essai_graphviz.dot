@@ -1,0 +1,26 @@
+graph reseauRoutier {
+  size="3.5";
+  //rankdir=LR
+  splines=polyline;
+  node [fontsize=20, shape=box];
+  Lille -- Brest [label="758"]
+  Lille -- Paris [label="226"]
+  Lille -- Strasbourg [label="525"]
+  Brest -- Paris [label="593"]
+  Paris -- Bordeaux [label="584"]
+  Paris -- Lyon [label="466"]
+  Paris -- Strasbourg [label="491"]
+  Brest -- Bordeaux [label="644"]
+  Lyon -- Strasbourg [label="487"]
+  Lyon -- Toulouse [label="538"]
+  Lyon -- Bordeaux [label="556"]
+  Lyon -- Marseille [label="314"]
+  Bordeaux -- Toulouse [label="244"]
+  Toulouse -- Marseille [label="404"]
+  Marseille -- Nice [label="199", constraint=false]
+
+  {rank=same; Brest, Paris, Strasbourg}
+  {rank=same; Lyon}
+  {rank=same; Bordeaux, Toulouse, Marseille, Nice}
+  }
+

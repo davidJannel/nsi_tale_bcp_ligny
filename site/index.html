@@ -15,7 +15,7 @@
     
     
       
-        <title>nsi_terminale_bcp_ligny</title>
+        <title>NSI Terminale - Ste Marie - Beaucamps Ligny</title>
       
     
     
@@ -29,6 +29,12 @@
     
     
     
+    <!-- favicons -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
+    <link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
     <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
@@ -37,10 +43,17 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-md5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 
     
       
     
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="xtra/stylesheets/pyoditeur.css">
     
     <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -48,6 +61,11 @@
 
     
     
+
+
+<input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
+
+
   </head>
   
   
@@ -70,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#le-programme-officiel" class="md-skip">
+        <a href="#terminale-specialite-nsi" class="md-skip">
           Aller au contenu
         </a>
       
@@ -84,10 +102,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="." title="nsi_terminale_bcp_ligny" class="md-header__button md-logo" aria-label="nsi_terminale_bcp_ligny" data-md-component="logo">
+    <a href="." title="NSI Terminale - Ste Marie - Beaucamps Ligny" class="md-header__button md-logo" aria-label="NSI Terminale - Ste Marie - Beaucamps Ligny" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="xtra/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -97,13 +114,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            nsi_terminale_bcp_ligny
+            NSI Terminale - Ste Marie - Beaucamps Ligny
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              index
+              Accueil
             
           </span>
         </div>
@@ -191,7 +208,7 @@
 
   <li class="md-tabs__item">
     <a href="." class="md-tabs__link md-tabs__link--active">
-      index
+      Accueil
     </a>
   </li>
 
@@ -201,11 +218,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="CH1_map/cours/" class="md-tabs__link">
-      CH1 : Mise au point des programmes
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="Langages%20et%20programmation/sommaire/" class="md-tabs__link">
+        Langages et programmation
+      </a>
+    </li>
+  
 
       
         
@@ -213,11 +234,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="CH2_recursivite/cours/" class="md-tabs__link">
-      CH2 : La récursivité
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="Structures%20de%20donn%C3%A9es/sommaire/" class="md-tabs__link">
+        Structures de données
+      </a>
+    </li>
+  
 
       
         
@@ -225,11 +250,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="CH3_TDA/cours/" class="md-tabs__link">
-      CH3 : Structures de données - Listes et dictionnaires
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/sommaire/" class="md-tabs__link">
+        Architectures matérielles - OS - Réseaux
+      </a>
+    </li>
+  
 
       
         
@@ -237,11 +266,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="CH4_piles_files/cours/" class="md-tabs__link">
-      CH4 : Piles et files
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="Algorithmique/sommaire/" class="md-tabs__link">
+        Algorithmique
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -267,13 +300,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="nsi_terminale_bcp_ligny" class="md-nav__button md-logo" aria-label="nsi_terminale_bcp_ligny" data-md-component="logo">
+    <a href="." title="NSI Terminale - Ste Marie - Beaucamps Ligny" class="md-nav__button md-logo" aria-label="NSI Terminale - Ste Marie - Beaucamps Ligny" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="xtra/logo.png" alt="logo">
 
     </a>
-    nsi_terminale_bcp_ligny
+    NSI Terminale - Ste Marie - Beaucamps Ligny
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -295,9 +327,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Accueil
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
-        index
+        Accueil
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#le-programme-officiel" class="md-nav__link">
+    Le programme officiel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attention-seuls-les-chapitres-abordes-avec-la-mention-bac-seront-evalues-a-lepreuve-ecrite" class="md-nav__link">
+    Attention seuls les chapitres abordés avec la mention BAC seront évalués à l'épreuve écrite.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -310,10 +380,85 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Langages et programmation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Langages et programmation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Langages et programmation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="CH1_map/cours/" class="md-nav__link">
-        CH1 : Mise au point des programmes
+      <a href="Langages%20et%20programmation/sommaire/" class="md-nav__link">
+        Sommaire
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Langages%20et%20programmation/CH1_map/cours/" class="md-nav__link">
+        CH1 Mise au point des programmes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Langages%20et%20programmation/CH2_recursivite/cours/" class="md-nav__link">
+        CH2 La récursivité
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Langages%20et%20programmation/CH11_modularite/cours/" class="md-nav__link">
+        CH11 Modularité - API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -325,10 +470,85 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Structures de données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Structures de données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Structures de données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="CH2_recursivite/cours/" class="md-nav__link">
-        CH2 : La récursivité
+      <a href="Structures%20de%20donn%C3%A9es/sommaire/" class="md-nav__link">
+        Sommaire
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Structures%20de%20donn%C3%A9es/CH3_TDA/cours/" class="md-nav__link">
+        CH3 Structures de données - Listes et dictionnaires
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Structures%20de%20donn%C3%A9es/CH4_piles_files/cours/" class="md-nav__link">
+        CH4 Piles et files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Structures%20de%20donn%C3%A9es/CH7_graphes/cours/" class="md-nav__link">
+        CH7 Graphes et parcours de graphes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -340,10 +560,99 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Architectures matérielles - OS - Réseaux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Architectures matérielles - OS - Réseaux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Architectures matérielles - OS - Réseaux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="CH3_TDA/cours/" class="md-nav__link">
-        CH3 : Structures de données - Listes et dictionnaires
+      <a href="Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/sommaire/" class="md-nav__link">
+        Sommaire
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH5_SOC/cours/" class="md-nav__link">
+        CH5 Systèmes sur puce
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH6_Processus/cours/" class="md-nav__link">
+        CH6 Gestion des processus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH8_Routage/cours/" class="md-nav__link">
+        CH8 Routage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH9_Cryptographie/cours/" class="md-nav__link">
+        CH9 Cryptographie - Sécurisation des communications
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -355,10 +664,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Algorithmique
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Algorithmique" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Algorithmique
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="CH4_piles_files/cours/" class="md-nav__link">
-        CH4 : Piles et files
+      <a href="Algorithmique/sommaire/" class="md-nav__link">
+        Sommaire
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Algorithmique/CH10_diviser/cours/" class="md-nav__link">
+        CH10 Diviser pour régner
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -378,22 +734,33 @@
                 
 
 
-<h1 id="le-programme-officiel"><a href="datas/programme-officiel-terminale-NSI.pdf">Le programme officiel</a><a class="headerlink" href="#le-programme-officiel" title="Permanent link">⚓︎</a></h1>
-<p>Attention seuls les chapitres abordés avec la mention BAC seront évalués à l'épreuve écrite.</p>
-<h1 id="chapitres-et-themes-abordes">Chapitres et thèmes abordés :<a class="headerlink" href="#chapitres-et-themes-abordes" title="Permanent link">⚓︎</a></h1>
+<h1 id="terminale-specialite-nsi">Terminale spécialité NSI<a class="headerlink" href="#terminale-specialite-nsi" title="Permanent link">⚓︎</a></h1>
+<h2 id="le-programme-officiel"><a href="datas/programme-officiel-terminale-NSI.pdf">Le programme officiel</a><a class="headerlink" href="#le-programme-officiel" title="Permanent link">⚓︎</a></h2>
+<h2 id="attention-seuls-les-chapitres-abordes-avec-la-mention-bac-seront-evalues-a-lepreuve-ecrite">Attention seuls les chapitres abordés avec la mention BAC seront évalués à l'épreuve écrite.<a class="headerlink" href="#attention-seuls-les-chapitres-abordes-avec-la-mention-bac-seront-evalues-a-lepreuve-ecrite" title="Permanent link">⚓︎</a></h2>
+<h1 id="chapitres-et-themes-abordes-en-cours-avec-moi">Chapitres et thèmes abordés en cours avec moi:<a class="headerlink" href="#chapitres-et-themes-abordes-en-cours-avec-moi" title="Permanent link">⚓︎</a></h1>
 <ul>
-<li><a href="CH1_map/cours/">CH1 : Mise au point des programmes - Gestion des bugs (BAC)</a></li>
-<li><a href="CH2_recursivite/cours/">CH2 : Récursivité (BAC)</a></li>
-<li><a href="CH3_TDA/cours/">CH3 : Structures de données - Listes et dictionnaires (BAC)</a></li>
-<li><a href="CH4_piles_files/cours/">CH4 : Piles et files (BAC)</a>  </li>
+<li><a href="Langages%20et%20programmation/CH1_map/cours/">CH1 : Mise au point des programmes - Gestion des bugs (BAC)</a></li>
+<li><a href="Langages%20et%20programmation/CH2_recursivite/cours/">CH2 : Récursivité (BAC)</a></li>
+<li><a href="Structures%20de%20donn%C3%A9es/CH3_TDA/cours/">CH3 : Structures de données - Listes et dictionnaires (BAC)</a></li>
+<li><a href="Structures%20de%20donn%C3%A9es/CH4_piles_files/cours/">CH4 : Piles et files (BAC)</a></li>
+<li><a href="Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH5_SOC/cours/">CH5 : Systèmes sur puce SOC (BAC)</a> </li>
+<li><a href="Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH6_Processus/cours/">CH6 : Gestion des processus (BAC)</a></li>
+<li><a href="Structures%20de%20donn%C3%A9es/CH7_graphes/cours/">CH7 : Graphes et parcours de graphes</a></li>
+<li><a href="Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH8_Routage/cours/">CH8 : Routage (BAC)</a></li>
+<li><a href="Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH9_Cryptographie/cours/">CH9 : Cryptographie - Sécurisation des communications</a></li>
+<li><a href="Algorithmique/CH10_diviser/cours/">CH10 : Diviser pour régner (BAC)</a></li>
+<li><a href="Langages%20et%20programmation/CH11_modularite/cours/">CH11 : Modularité - API</a></li>
 </ul>
-<h2 id="references">Références :<a class="headerlink" href="#references" title="Permanent link">⚓︎</a></h2>
+<h2 id="references-et-sites-uitlises">Références et sites uitlisés:<a class="headerlink" href="#references-et-sites-uitlises" title="Permanent link">⚓︎</a></h2>
 <ul>
 <li>Livre Hachette - NSI Spécialité terminale</li>
-<li>Glassus</li>
-<li>David Roche</li>
-<li>xyz</li>
-<li>...</li>
+<li>Alain BUSSER : <a href="https://alainbusser.frama.io/NSI-IREMI-974/">https://alainbusser.frama.io/NSI-IREMI-974/</a></li>
+<li>Guillaume Connan: <a href="https://gitlab.com/lyceeND/tale">https://gitlab.com/lyceeND/tale</a></li>
+<li>Romain Janvier : <a href="http://nsiterminale.janviercommelemois.fr/">nsiterminale.janviercommelemois.fr</a></li>
+<li>Gilles LASSUS: <a href="https://glassus.github.io/terminale_nsi/">https://glassus.github.io/terminale_nsi/</a></li>
+<li>Anne GELLIER : <a href="https://angellier.gitlab.io/nsi/terminale/">https://angellier.gitlab.io/nsi/terminale/</a></li>
+<li><a href="https://pixees.fr/informatiquelycee/n_site/nsi_term.html">Pixees - David Roche</a></li>
+<li><a href="https://eskool.gitlab.io/tnsi/">eskool - Tale NSI - Rodrigo Schwencke</a></li>
 </ul>
 
               
@@ -418,13 +785,13 @@
       
       
         
-        <a href="CH1_map/cours/" class="md-footer__link md-footer__link--next" aria-label="Suivant: CH1 : Mise au point des programmes" rel="next">
+        <a href="Langages%20et%20programmation/sommaire/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Sommaire" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              CH1 : Mise au point des programmes
+              Sommaire
             </div>
           </div>
           <div class="md-footer__button md-icon">

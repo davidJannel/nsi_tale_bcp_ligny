@@ -1,0 +1,1424 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://davidjannel.github.io/nsi_tale_bcp_ligny/Structures%20de%20donn%C3%A9es/CH4_piles_files/cours/">
+      
+      <link rel="icon" href="../../../xtra/logo.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+    
+    
+      
+        <title>CH4 Piles et files - NSI Terminale - Ste Marie - Beaucamps Ligny</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4a0965b7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+    <!-- favicons -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
+    <link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
+    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-md5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../xtra/stylesheets/pyoditeur.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+
+
+<input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ch4-piles-et-files" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="NSI Terminale - Ste Marie - Beaucamps Ligny" class="md-header__button md-logo" aria-label="NSI Terminale - Ste Marie - Beaucamps Ligny" data-md-component="logo">
+      
+  <img src="../../../xtra/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale - Ste Marie - Beaucamps Ligny
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CH4 Piles et files
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Langages%20et%20programmation/sommaire/" class="md-tabs__link">
+        Langages et programmation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sommaire/" class="md-tabs__link md-tabs__link--active">
+        Structures de données
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/sommaire/" class="md-tabs__link">
+        Architectures matérielles - OS - Réseaux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Algorithmique/sommaire/" class="md-tabs__link">
+        Algorithmique
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NSI Terminale - Ste Marie - Beaucamps Ligny" class="md-nav__button md-logo" aria-label="NSI Terminale - Ste Marie - Beaucamps Ligny" data-md-component="logo">
+      
+  <img src="../../../xtra/logo.png" alt="logo">
+
+    </a>
+    NSI Terminale - Ste Marie - Beaucamps Ligny
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Langages et programmation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Langages et programmation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Langages et programmation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Langages%20et%20programmation/sommaire/" class="md-nav__link">
+        Sommaire
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Langages%20et%20programmation/CH1_map/cours/" class="md-nav__link">
+        CH1 Mise au point des programmes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Langages%20et%20programmation/CH2_recursivite/cours/" class="md-nav__link">
+        CH2 La récursivité
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Langages%20et%20programmation/CH11_modularite/cours/" class="md-nav__link">
+        CH11 Modularité - API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Structures de données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Structures de données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Structures de données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sommaire/" class="md-nav__link">
+        Sommaire
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CH3_TDA/cours/" class="md-nav__link">
+        CH3 Structures de données - Listes et dictionnaires
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CH4 Piles et files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        CH4 Piles et files
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-les-piles" class="md-nav__link">
+    1. Les piles
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Les piles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-quest-ce-quune-pile" class="md-nav__link">
+    1.1 Qu'est ce qu'une pile ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-exemples-dutilisation-de-piles-en-informatique" class="md-nav__link">
+    1.2 Exemples d'utilisation de piles en informatique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-exemple-dimplementation" class="md-nav__link">
+    1.3 Exemple d'implémentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-td-implementation-utilisant-la-poo-et-utilisation-des-piles" class="md-nav__link">
+    1.4 TD - Implémentation utilisant la POO et utilisation des piles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-tp-realisation-dune-calculatrice" class="md-nav__link">
+    1.5 TP - Réalisation d'une calculatrice
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-les-files" class="md-nav__link">
+    2. Les files
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Les files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-quest-ce-quune-file" class="md-nav__link">
+    2.1 Qu'est ce qu'une file ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-exemples-dutilisation-de-files-en-informatique" class="md-nav__link">
+    2.2 Exemples d'utilisation de files en informatique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-exemple-dimplementation" class="md-nav__link">
+    2.3 Exemple d'impléméntation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-td-implementation-utilisant-la-poo-et-utilisation-des-files" class="md-nav__link">
+    2.4 TD - Implémentation utilisant la POO et utilisation des files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CH7_graphes/cours/" class="md-nav__link">
+        CH7 Graphes et parcours de graphes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Architectures matérielles - OS - Réseaux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Architectures matérielles - OS - Réseaux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Architectures matérielles - OS - Réseaux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/sommaire/" class="md-nav__link">
+        Sommaire
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH5_SOC/cours/" class="md-nav__link">
+        CH5 Systèmes sur puce
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH6_Processus/cours/" class="md-nav__link">
+        CH6 Gestion des processus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH8_Routage/cours/" class="md-nav__link">
+        CH8 Routage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Architectures%20mat%C3%A9rielles%20-%20OS%20-%20R%C3%A9seaux/CH9_Cryptographie/cours/" class="md-nav__link">
+        CH9 Cryptographie - Sécurisation des communications
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Algorithmique
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Algorithmique" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Algorithmique
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Algorithmique/sommaire/" class="md-nav__link">
+        Sommaire
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Algorithmique/CH10_diviser/cours/" class="md-nav__link">
+        CH10 Diviser pour régner
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+    
+                
+
+
+<h1 id="ch4-piles-et-files">CH4 : Piles et files<a class="headerlink" href="#ch4-piles-et-files" title="Permanent link">⚓︎</a></h1>
+<details class="note">
+<summary>Programme officiel</summary>
+<p><img alt="image" class="center" src="../img/BO2.png" /></p>
+</details>
+<h2 id="1-les-piles">1. Les piles<a class="headerlink" href="#1-les-piles" title="Permanent link">⚓︎</a></h2>
+<h3 id="11-quest-ce-quune-pile">1.1 Qu'est ce qu'une pile ?<a class="headerlink" href="#11-quest-ce-quune-pile" title="Permanent link">⚓︎</a></h3>
+<p><img alt="image" class="center" src="../img/assiettes2.png" width="50%" /></p>
+<p>Une structure de <strong>pile</strong> (penser à une pile d'assiette) est associée à la méthode <strong>LIFO</strong> (Last In, First Out) :
+les éléments sont empilés les uns au-dessus des autres, et on ne peut toujours dépiler que l'élément du haut de la pile. Le dernier élément à être arrivé est donc le premier à être sorti.</p>
+<p>Son interface minimale est :</p>
+<ul>
+<li><strong>creer_pile()</strong> : constructeur qui retourne une pile vide.</li>
+<li><strong>pile_vide(p)</strong> : accesseur qui retourne Vrai si la pile p est vide.</li>
+<li><strong>empiler(e, p)</strong> : opérateur qui ajoute l'élément e au sommet de la pile p.</li>
+<li><strong>depiler(p)</strong> : opérateur qui retire et retourne le sommet de la pile p (si elle n'est pas vide).</li>
+<li><strong>sommet(p)</strong> : accesseur qui retourne le sommet de la pile p (si elle n'est pas vide).</li>
+<li><strong>elements_pile(p)</strong> : itérateur qui énumère les éléments contenus dans la pile p.</li>
+</ul>
+<p><img alt="" class="center" src="../img/gifpile.webp" /></p>
+<div class="admonition example">
+<p class="admonition-title">Exercice : Utilisation de l'interface</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Énoncé</label><label for="__tabbed_1_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On considère l'enchaînement d'opérations ci-dessous. Écrire à chaque étape l'état de la pile <code>p</code> et la valeur éventuellement renvoyée.
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span> <span class="n">p</span> <span class="o">=</span> <span class="n">creer_pile</span><span class="p">()</span> 
+<span class="mf">2.</span> <span class="n">p</span> <span class="o">=</span> <span class="n">empiler</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>   
+<span class="mf">3.</span> <span class="n">p</span> <span class="o">=</span> <span class="n">empiler</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>  
+<span class="mf">4.</span> <span class="n">pile_vide</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  
+<span class="mf">4.</span> <span class="n">p</span> <span class="o">=</span> <span class="n">empiler</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>  
+<span class="mf">5.</span> <span class="n">depiler</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  
+<span class="mf">6.</span> <span class="n">depiler</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> 
+<span class="mf">7.</span> <span class="n">p</span> <span class="o">=</span> <span class="n">empiler</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>  
+<span class="mf">8.</span> <span class="n">depiler</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  
+<span class="mf">9.</span> <span class="n">depiler</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> 
+<span class="mf">10.</span> <span class="n">pile_vide</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> 
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span> <span class="n">p</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># à ce stade on a aucune connaissance de l&#39;implémentation utilisée </span>
+<span class="mf">2.</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">3</span>   
+<span class="mf">3.</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>  
+<span class="mf">4.</span> <span class="n">Faux</span>  
+<span class="mf">4.</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span>  
+<span class="mf">5.</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span> <span class="n">et</span> <span class="n">on</span> <span class="n">renvoie</span> <span class="mi">1</span> 
+<span class="mf">6.</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">3</span> <span class="n">et</span> <span class="n">on</span> <span class="n">renvoie</span> <span class="mi">5</span>
+<span class="mf">7.</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span>  
+<span class="mf">8.</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">3</span> <span class="n">et</span> <span class="n">on</span> <span class="n">renvoie</span> <span class="mi">9</span> 
+<span class="mf">9.</span> <span class="n">p</span> <span class="o">=</span> <span class="kc">None</span> <span class="n">et</span> <span class="n">on</span> <span class="n">renvoie</span> <span class="mi">3</span>
+<span class="mf">10.</span> <span class="n">Vrai</span> 
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="12-exemples-dutilisation-de-piles-en-informatique">1.2 Exemples d'utilisation de piles en informatique<a class="headerlink" href="#12-exemples-dutilisation-de-piles-en-informatique" title="Permanent link">⚓︎</a></h3>
+<ul>
+<li>lors de l'exécution d'une fonction récursive, le processeur empile successivement les appels à traiter : seule l'instruction du haut de la pile peut être traitée.</li>
+</ul>
+<p><img alt="Fibonacci" class="center" src="../img/pile_fibo.webp" /></p>
+<ul>
+<li>dans un navigateur internet, la liste des pages parcourues est stockée sous forme de pile : la fonction «Back» permet de «dépiler» peu à peu les pages précédemment parcourues : </li>
+</ul>
+<p><img alt="" class="center" src="../img/history.png" /></p>
+<h3 id="13-exemple-dimplementation">1.3 Exemple d'implémentation<a class="headerlink" href="#13-exemple-dimplementation" title="Permanent link">⚓︎</a></h3>
+<p>Une implémentation possible consiste à utiliser les tableaux dynamiques (type <code>list</code> de Python). Pour réaliser notre implémentation, on utilisera les méthodes <code>append</code>, <code>pop</code> ...</p>
+<p>Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier <a href="../data/piles_cours.py">piles_cours.py</a>.</p>
+<h4 id="le-constructeur-creation-de-la-pile">Le constructeur : création de la pile<a class="headerlink" href="#le-constructeur-creation-de-la-pile" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>creer_pile</code> qui ne prend pas d'argument et qui renvoie un tableau vide (type <code>list</code>).</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">creer_pile</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[]</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="un-accesseur-savoir-si-la-pile-est-vide">Un accesseur : savoir si la pile est vide<a class="headerlink" href="#un-accesseur-savoir-si-la-pile-est-vide" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Énoncé</label><label for="__tabbed_3_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>pile_vide</code> qui prend en argument une pile et qui renvoie <code>True</code> si la pile est vide.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">pile_vide</span><span class="p">(</span><span class="n">pile</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pile</span> <span class="o">==</span> <span class="p">[]</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="un-operateur-ajout-dun-element-au-sommet-de-la-pile">Un opérateur : ajout d'un élément au sommet de la pile<a class="headerlink" href="#un-operateur-ajout-dun-element-au-sommet-de-la-pile" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Aides</label><label for="__tabbed_4_3">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>empiler</code> qui prend en argument un élément et une liste et place cet élément au sommet de la pile.</p>
+</div>
+<div class="tabbed-block">
+<p>La fonction ne renvoie rien. C'est une procédure.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">empiler</span><span class="p">(</span><span class="n">elt</span><span class="p">,</span> <span class="n">pile</span><span class="p">):</span>
+    <span class="n">pile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elt</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="un-operateur-retirer-un-element-du-sommet-de-la-pile">Un opérateur : retirer un élément du sommet de la pile<a class="headerlink" href="#un-operateur-retirer-un-element-du-sommet-de-la-pile" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Énoncé</label><label for="__tabbed_5_2">Aides</label><label for="__tabbed_5_3">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>depiler</code> qui prend en argument une pile, retire et retourne le sommet de la pile p (si elle n'est pas vide).</p>
+</div>
+<div class="tabbed-block">
+<p>Vérifier que la pile passée en argument n'est pas vide avec un <code>assert</code>.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">depiler</span><span class="p">(</span><span class="n">pile</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">pile_vide</span><span class="p">(</span><span class="n">pile</span><span class="p">),</span> <span class="s2">&quot;pile vide&quot;</span>
+    <span class="n">sommet</span> <span class="o">=</span> <span class="n">pile</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">sommet</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="un-accesseur-connaitre-le-sommet-de-la-pile">Un accesseur : Connaître le sommet de la pile<a class="headerlink" href="#un-accesseur-connaitre-le-sommet-de-la-pile" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Énoncé</label><label for="__tabbed_6_2">Aides</label><label for="__tabbed_6_3">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>sommet</code> qui prend en argument une pile et renvoie simplement l'élément situé au sommet de la pile (si elle n'est pas vide).</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Vérifier que la pile passée en argument n'est pas vide avec un <code>assert</code>.</li>
+<li>La pile ne doit pas être modifiée.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">sommet</span><span class="p">(</span><span class="n">pile</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">pile_vide</span><span class="p">(</span><span class="n">pile</span><span class="p">),</span> <span class="s2">&quot;pile vide&quot;</span>
+    <span class="k">return</span> <span class="n">pile</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="un-iterateur-lister-les-elements-presents-dans-la-pile">Un itérateur : lister les éléments présents dans la pile<a class="headerlink" href="#un-iterateur-lister-les-elements-presents-dans-la-pile" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Énoncé</label><label for="__tabbed_7_2">Aides</label><label for="__tabbed_7_3">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>elements_pile</code> qui prend en argument une pile et qui renvoie un tableau contenant les éléments de la pile. Attention, le tableau doit contenir les éléments parcourus du sommet à la base de la pile.</p>
+</div>
+<div class="tabbed-block">
+<p>Vous pouvez regarder la documentation de la fonction <code>range</code> (<code>help(range)</code>).</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">elements_pile</span><span class="p">(</span><span class="n">pile</span><span class="p">):</span>
+    <span class="n">tab_elt</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pile</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">tab_elt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pile</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">tab_elt</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="etendre-linterface">Étendre l'interface<a class="headerlink" href="#etendre-linterface" title="Permanent link">⚓︎</a></h4>
+<p>On peut ajouter un accesseur <code>taille</code> qui retourne le nombre d'éléments de la pile.</p>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Énoncé</label><label for="__tabbed_8_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>taille</code> qui prend en argument une pile et qui renvoie le nombre d'éléments de la pile.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">taille</span><span class="p">(</span><span class="n">pile</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">pile</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="14-td-implementation-utilisant-la-poo-et-utilisation-des-piles">1.4 TD - Implémentation utilisant la POO et utilisation des piles<a class="headerlink" href="#14-td-implementation-utilisant-la-poo-et-utilisation-des-piles" title="Permanent link">⚓︎</a></h3>
+<p>Travail à réaliser sur le notebook TD_piles.ypnb</p>
+<p>Il vous est conseillé de faire et conserver un fichier (module) nommé piles.py avec l'implémentation utilisant la POO.</p>
+<h3 id="15-tp-realisation-dune-calculatrice">1.5 TP - Réalisation d'une calculatrice<a class="headerlink" href="#15-tp-realisation-dune-calculatrice" title="Permanent link">⚓︎</a></h3>
+<p>Dans les années 90, les calculatrices HP étaient très réputées dans le milieu scientifique pour la richesse de leures fonctionnalités. Elles possédaient une autre particularité : elles utilisaient la notation dite "polonaise inversée" <strong>NPI</strong> pour effectuer les calculs. Cela signifie que l'on entrait d'abord les éléments pour faire le calcul puis ensuite l'opérateur. Par exemple, pour effectuer l'opération 4 + 3 on entrait successivement 4 puis 3 et enfin +.</p>
+<p><img alt="image" src="../img/hp28c.jpg" /></p>
+<p>On peut donner encore d'autres exemples : pour calculer <code>(2+3)*11</code> , on entrera la chaine de caractère "<code>2 3 + 11 *</code>". On aurait d'ailleurs le même résultat avec la chaine de caractère "<code>11 2 3 + *</code>" qui représenterait <code>11*(2+3)</code>.</p>
+<p>L'algorithme pour calculer le résultat d'un calcul en notation polonaise inversé utilise une pile. On procéde de la façon suivante. Pour chaque élément de l'expression :</p>
+<ul>
+<li>si c'est un nombre on le place dans la pile.</li>
+<li>si c'est un opérateur, on récupère les deux nombres au sommet de la pile et on leur applique l'opérateur (le premier sommet est à droite de l'opérateur, ce qui est important pour les soustractions et les divisions).</li>
+</ul>
+<p>Vous allez réaliser une calculatrice NPI à partir de la classe de pile que nous avons fait précedemment.</p>
+<div class="admonition question">
+<p class="admonition-title">Travail à faire</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Consignes</label><label for="__tabbed_9_2">Code à compléter</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>
+<p>Pour faire une calculatrice NPI, vous compléterez la fonction <code>calcule</code>qui prend en entrée une chaine de caractère notée <code>expression</code> qui est une expression en notation polonaise inversée, et qui renvoi en sortie la valeur du résultat. Si la chaine est bien formée, la pile ne contient plus qu'un seul élément qui est le résultat. Si la chaine est mal formée, la fonction doit renvoyer <code>None</code>.</p>
+</li>
+<li>
+<p>Pour faciliter votre travail, la chaine est séparée en élements dans un tableau grâce à split, et il n'y a plus qu'à boucler sur le tableau.</p>
+</li>
+<li>
+<p>Des assertions ont été fournies pour vous aider à vérifier votre travail.</p>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">cellule</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Classe qui modélise une cellule dans une structure linéaire &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">element</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contenu</span> <span class="o">=</span> <span class="n">element</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">suivant</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">class</span> <span class="nc">pile</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Classe qui implémente une pile&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">estVide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span> <span class="o">==</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">empile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">element</span><span class="p">):</span>
+        <span class="n">nouveau</span> <span class="o">=</span> <span class="n">cellule</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="n">nouveau</span><span class="o">.</span><span class="n">suivant</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span> <span class="o">=</span> <span class="n">nouveau</span>
+
+    <span class="k">def</span> <span class="nf">depile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">valeur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span><span class="o">.</span><span class="n">contenu</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span><span class="o">.</span><span class="n">suivant</span>
+        <span class="k">return</span> <span class="n">valeur</span>
+
+    <span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pointeur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sommet</span>
+        <span class="k">while</span> <span class="n">pointeur</span> <span class="o">!=</span> <span class="kc">None</span> <span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">pointeur</span><span class="o">.</span><span class="n">contenu</span><span class="p">)</span>
+            <span class="n">pointeur</span> <span class="o">=</span> <span class="n">pointeur</span><span class="o">.</span><span class="n">suivant</span>
+
+<span class="k">def</span> <span class="nf">calcule</span><span class="p">(</span><span class="n">expression</span><span class="p">):</span>
+    <span class="n">valeur</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">tableau</span> <span class="o">=</span> <span class="n">expression</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="c1">### Mettez votre code ici</span>
+
+    <span class="k">return</span> <span class="n">valeur</span>
+
+
+<span class="k">assert</span> <span class="n">calcule</span><span class="p">(</span><span class="s1">&#39;2 3 + 11 *&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">55</span><span class="p">,</span> <span class="s2">&quot;erreur sur le premier calcul&quot;</span>
+<span class="k">assert</span> <span class="n">calcule</span><span class="p">(</span><span class="s1">&#39;2 5 * 7  +&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">17</span><span class="p">,</span> <span class="s2">&quot;erreur sur le second calcul&quot;</span>
+<span class="k">assert</span> <span class="n">calcule</span><span class="p">(</span><span class="s1">&#39;8 2 / 4 - &#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;erreur sur le troisième calcul&quot;</span>
+<span class="k">assert</span> <span class="n">calcule</span><span class="p">(</span><span class="s1">&#39;1 2 3 4 + * +&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span> <span class="p">,</span> <span class="s2">&quot;erreur sur le quatrième calcul&quot;</span>
+<span class="k">assert</span> <span class="n">calcule</span><span class="p">(</span><span class="s2">&quot;1 2 3 + &quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">,</span><span class="s2">&quot; chaine mal formée mais valeur retournée&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="2-les-files">2. Les files<a class="headerlink" href="#2-les-files" title="Permanent link">⚓︎</a></h2>
+<p>Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier <a href="../data/files_cours.py">files_cours.py</a>.</p>
+<h3 id="21-quest-ce-quune-file">2.1 Qu'est ce qu'une file ?<a class="headerlink" href="#21-quest-ce-quune-file" title="Permanent link">⚓︎</a></h3>
+<p><img alt="image" class="center" src="../img/queue.png" width="40%" /></p>
+<p>Une structure de <strong>file</strong> (penser à une file d'attente) est associée à la méthode <strong>FIFO</strong> (First In, First Out) :
+les éléments sont enfilés les uns à la suite des autres, et on ne peut toujours défiler que l'élément en tête de la file. Le premier élément à être arrivé est donc le premier à en sortir. Sinon ça râle dans la file d'attente.</p>
+<p>Son interface minimale est :</p>
+<ul>
+<li><strong>creer_file</strong> : constructeur qui retourne une file vide.</li>
+<li><strong>file_vide(f)</strong> : accesseur qui retourne vrai si la file f est vide.</li>
+<li><strong>enfiler(e, f)</strong> : opérateur qui ajoute l'élément e à la fin de la file f.</li>
+<li><strong>defiler(f)</strong> : opérateur qui retire l'élément placé en tête de file (si elle n'est pas vide).</li>
+<li><strong>tete_file(f)</strong> : accesseur qui retourne l'élément placé en tête de la file f (si elle n'est pas vide).</li>
+<li><strong>elements_file(f)</strong>: itérateur qui énumère les éléments de la file f.</li>
+</ul>
+<p><img alt="un bien joli gif" class="center" src="../img/giffile.webp" /></p>
+<div class="admonition example">
+<p class="admonition-title">Exercice : Utilisation de l'interface</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Énoncé</label><label for="__tabbed_10_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On considère l'enchaînement d'opérations ci-dessous. Écrire à chaque étape l'état de la file <code>f</code> et la valeur éventuellement renvoyée.
+La convention choisie est : on enfilera <strong>à droite</strong> et on défilera <strong>à gauche</strong>.
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span> <span class="n">f</span> <span class="o">=</span> <span class="n">creer_file</span><span class="p">()</span>
+<span class="mf">2.</span> <span class="n">enfiler</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> 
+<span class="mf">3.</span> <span class="n">enfiler</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="mf">4.</span> <span class="n">file_vide</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="mf">5.</span> <span class="n">enfiler</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> 
+<span class="mf">6.</span> <span class="n">defiler</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> 
+<span class="mf">7.</span> <span class="n">defile</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="mf">8.</span> <span class="n">enfiler</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> 
+<span class="mf">9.</span> <span class="n">defiler</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> 
+<span class="mf">10.</span> <span class="n">defiler</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="mf">11.</span> <span class="n">file_vide</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> 
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span> <span class="n">f</span> <span class="o">=</span>  <span class="c1"># dépend de l&#39;implémentation utilisée </span>
+<span class="mf">2.</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="mf">3.</span> <span class="n">f</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>
+<span class="mf">4.</span> <span class="n">faux</span>
+<span class="mf">5.</span> <span class="n">f</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span>
+<span class="mf">6.</span> <span class="n">valeur</span> <span class="n">renvoyée</span> <span class="p">:</span> <span class="mi">3</span> <span class="p">,</span> <span class="n">f</span> <span class="o">=</span>  <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span>
+<span class="mf">7.</span> <span class="n">valeur</span> <span class="n">renvoyée</span> <span class="p">:</span> <span class="mi">5</span> <span class="p">,</span> <span class="n">f</span> <span class="o">=</span>  <span class="mi">1</span> 
+<span class="mf">8.</span> <span class="n">f</span> <span class="o">=</span>  <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span>
+<span class="mf">9.</span> <span class="n">valeur</span> <span class="n">renvoyée</span> <span class="p">:</span> <span class="mi">1</span> <span class="p">,</span> <span class="n">f</span> <span class="o">=</span>  <span class="mi">9</span> 
+<span class="mf">10.</span> <span class="n">valeur</span> <span class="n">renvoyée</span> <span class="p">:</span> <span class="mi">9</span> <span class="p">,</span> <span class="n">f</span> <span class="o">=</span>   
+<span class="mf">11.</span> <span class="n">vrai</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="22-exemples-dutilisation-de-files-en-informatique">2.2 Exemples d'utilisation de files en informatique<a class="headerlink" href="#22-exemples-dutilisation-de-files-en-informatique" title="Permanent link">⚓︎</a></h3>
+<ul>
+<li><strong>Serveurs d'impression</strong> : <code>Spoolers</code> <img alt="🇬🇧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" title=":gb:" /> qui traitent ainsi les requêtes dans l'ordre dans lequel elles arrivent, et les insèrent dans une file d'attente (dite aussi <code>queue</code> ou <code>spool</code>).</li>
+<li>Certains <strong>moteurs multitâches dans un OS</strong>, qui doivent accorder du temps-machine à chaque tâche, sans en privilégier aucune.</li>
+</ul>
+<h3 id="23-exemple-dimplementation">2.3 Exemple d'impléméntation<a class="headerlink" href="#23-exemple-dimplementation" title="Permanent link">⚓︎</a></h3>
+<p>Comme pour les piles, une implémentation possible consiste à utiliser les tableaux dynamiques (type <code>list</code> de Python).</p>
+<p>Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier <a href="../data/files_cours.py">files_cours.py</a>.</p>
+<h4 id="le-constructeur-creation-de-la-file">Le constructeur : création de la file<a class="headerlink" href="#le-constructeur-creation-de-la-file" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Énoncé</label><label for="__tabbed_11_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>creer_file</code> qui ne prend pas d'argument et qui renvoie un tableau vide (type <code>list</code>).</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">creer_file</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[]</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="un-accesseur-savoir-si-la-file-est-vide">Un accesseur : savoir si la file est vide<a class="headerlink" href="#un-accesseur-savoir-si-la-file-est-vide" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Énoncé</label><label for="__tabbed_12_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>file_vide</code> qui prend en argument une file et qui renvoie <code>True</code> si la file est vide.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">file_vide</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">file</span> <span class="o">==</span> <span class="p">[]</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="un-operateur-ajout-dun-element-en-queue-de-file">Un opérateur : ajout d'un élément en queue de file<a class="headerlink" href="#un-operateur-ajout-dun-element-en-queue-de-file" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Énoncé</label><label for="__tabbed_13_2">Aides</label><label for="__tabbed_13_3">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>enfiler</code> qui prend en argument un élément et une liste et place cet élément en queue de file.</p>
+</div>
+<div class="tabbed-block">
+<p>La fonction ne renvoie rien. C'est une procédure.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">enfiler</span><span class="p">(</span><span class="n">elt</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elt</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="un-operateur-retirer-un-element-de-la-file">Un opérateur : retirer un élément de la file<a class="headerlink" href="#un-operateur-retirer-un-element-de-la-file" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:3"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Énoncé</label><label for="__tabbed_14_2">Aides</label><label for="__tabbed_14_3">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>defiler</code> qui prend en argument une file, retire et retourne la tête de la file f (si elle n'est pas vide).</p>
+</div>
+<div class="tabbed-block">
+<p>Vérifier que la file passée en argument n'est pas vide avec un <code>assert</code>.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">defiler</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">file_vide</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s2">&quot;file vide&quot;</span>
+    <span class="n">tete</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tete</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="un-accesseur-connaitre-la-tete-de-la-file">Un accesseur : Connaître la tete de la file<a class="headerlink" href="#un-accesseur-connaitre-la-tete-de-la-file" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:3"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><input id="__tabbed_15_3" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Énoncé</label><label for="__tabbed_15_2">Aides</label><label for="__tabbed_15_3">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>tete_file</code> qui prend en argument une file et renvoie simplement l'élément situé en tête de la file (si elle n'est pas vide).</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Vérifier que la file passée en argument n'est pas vide avec un <code>assert</code>.</li>
+<li>La file ne doit pas être modifiée.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tete_file</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">file_vide</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s2">&quot;file vide&quot;</span>
+    <span class="k">return</span> <span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="un-iterateur-lister-les-elements-presents-dans-la-file">Un itérateur : lister les éléments présents dans la file<a class="headerlink" href="#un-iterateur-lister-les-elements-presents-dans-la-file" title="Permanent link">⚓︎</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Énoncé</label><label for="__tabbed_16_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>elements_file</code> qui prend en argument une file et qui renvoie un tableau contenant les éléments de la file. Attention, le tableau doit contenir les éléments parcourus de la queue à la tête de la file.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">elements_file</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">file</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="etendre-linterface_1">Étendre l'interface<a class="headerlink" href="#etendre-linterface_1" title="Permanent link">⚓︎</a></h4>
+<p>On peut ajouter un accesseur <code>taille</code> qui retourne le nombre d'éléments de la file.</p>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Énoncé</label><label for="__tabbed_17_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Créer une fonction <code>taille</code> qui prend en argument une file et qui renvoie le nombre d'éléments de la file.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">taille</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="24-td-implementation-utilisant-la-poo-et-utilisation-des-files">2.4 TD - Implémentation utilisant la POO et utilisation des files<a class="headerlink" href="#24-td-implementation-utilisant-la-poo-et-utilisation-des-files" title="Permanent link">⚓︎</a></h3>
+<p>Travail à réaliser à partir du <a href="../data/TD_files.pdf">TD_files.pdf</a> en créant un notebook noté : TD_files.ypnb</p>
+<p>Il vous est conseillé de faire et conserver un fichier (module) nommé files.py avec l'implémentation utilisant la POO.</p>
+
+              
+    <script src="../../../js/ide.js"></script> 
+
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../../CH3_TDA/cours/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: CH3 Structures de données - Listes et dictionnaires" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              CH3 Structures de données - Listes et dictionnaires
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../CH7_graphes/cours/" class="md-footer__link md-footer__link--next" aria-label="Suivant: CH7 Graphes et parcours de graphes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              CH7 Graphes et parcours de graphes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY-SA / D. Jannel
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a877e258.min.js"></script>
+      
+        <script src="../../../xtra/javascripts/interpreter.js"></script>
+      
+        <script src="../../../xtra/javascripts/mathjax-config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+    
+  </body>
+</html>
