@@ -143,7 +143,7 @@ Soit :
 
 ![image](img/liste_cours.png)
 
-Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier [listes_cours.py](listes_cours.py).
+Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier [listes_cours.py](data/listes_cours.py).
 
 #### Le constructeur : création de la liste
 !!! question "Exercice"
@@ -288,7 +288,7 @@ Le problème de cette implémentation est dans l'efficacité de la recherche d'u
 
 Une implémentation plus efficace est donc de continuer à utiliser un tableau et à transformer la clé en un indice à l'aide d'une fonction de hachage. Ça a l'avantage de trouver directement une clé dans le tableau. La fonction de hachage transforme la clé en un indice et il suffit donc de lire la donnée stockée dans le tableau à l'indice correspondant. La complexité de la recherche est donc O(1).
 
-Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier [table_hachage_cours.py](table_hachage_cours.py).
+Les différentes étapes de l'implémentation de l'interface sont à réaliser en complétant le fichier [table_hachage_cours.py](data/table_hachage_cours.py).
 
 #### La fonction de hachage
 Si on prend pour clé une chaine de caractère, une fonction de hachage peut consister à additionner le code ascii de chaque caractère, modulo la taille du tableau.

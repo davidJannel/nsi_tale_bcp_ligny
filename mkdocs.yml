@@ -1,4 +1,4 @@
-site_name: nsi_terminale_bcp_ligny
+site_name: NSI Terminale - Ste Marie - Beaucamps Ligny
 site_url: "https://davidjannel.github.io/nsi_tale_bcp_ligny/"
 
 theme:
@@ -7,8 +7,11 @@ theme:
   font: false
   language: fr
   favicon: xtra/logo.png
+  logo: xtra/logo.png
   icon:
-    logo: material/library
+    - logo: material/react
+    - admonition:
+      quote: octicons/heart
   features:
     - navigation.instant
     - navigation.tabs
@@ -72,15 +75,31 @@ markdown_extensions:
         custom_icons:
           - overrides/.icons
 
-
+plugins:
+  - search
+  - macros
 
 nav:
-  - 'index': 'index.md'
-  - 'CH1 : Mise au point des programmes': 'CH1_map/cours.md'
-  - 'CH2 : La récursivité': 'CH2_recursivite/cours.md'
-  - 'CH3 : Structures de données - Listes et dictionnaires': 'CH3_TDA/cours.md'
-  - 'CH4 : Piles et files': 'CH4_piles_files/cours.md'
-  
+  - Accueil: index.md
+  - Langages et programmation:
+    - Sommaire: Langages et programmation/sommaire.md
+    - CH1 Mise au point des programmes: Langages et programmation/CH1_map/cours.md
+    - CH2 La récursivité: Langages et programmation/CH2_recursivite/cours.md
+    - CH11 Modularité - API: Langages et programmation/CH11_modularite/cours.md
+  - Structures de données:
+    - Sommaire: Structures de données/sommaire.md
+    - CH3 Structures de données - Listes et dictionnaires: Structures de données/CH3_TDA/cours.md
+    - CH4 Piles et files: Structures de données/CH4_piles_files/cours.md
+    - CH7 Graphes et parcours de graphes: Structures de données/CH7_graphes/cours.md
+  - Architectures matérielles - OS - Réseaux :
+    - Sommaire: Architectures matérielles - OS - Réseaux/sommaire.md
+    - CH5 Systèmes sur puce: Architectures matérielles - OS - Réseaux/CH5_SOC/cours.md
+    - CH6 Gestion des processus: Architectures matérielles - OS - Réseaux/CH6_Processus/cours.md
+    - CH8 Routage: Architectures matérielles - OS - Réseaux/CH8_Routage/cours.md
+    - CH9 Cryptographie - Sécurisation des communications: Architectures matérielles - OS - Réseaux/CH9_Cryptographie/cours.md
+  - Algorithmique:
+    - Sommaire: Algorithmique/sommaire.md
+    - CH10 Diviser pour régner: Algorithmique/CH10_diviser/cours.md
 
 
 extra_javascript:
@@ -90,5 +109,8 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
 
+extra_css:
+  - stylesheets/extra.css
+  - xtra/stylesheets/pyoditeur.css
 
 copyright:  CC BY-SA / D. Jannel
