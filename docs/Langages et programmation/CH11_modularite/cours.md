@@ -32,3 +32,69 @@ url = "https://api-adresse.data.gouv.fr/search/?q=54-rue-de-l-eglise&postcode=59
 reponse = requests.get(url)
 reponse = reponse.json()
 ```
+- La fonction `get` du module `requests` permet d'envoyer une requête GET à l'URL spécifiée et ensuite de récupérer la réponse.
+- La commande `reponse.json()` extrait de la réponse les données encodées dans le format JSON, qui est un format de données textuelles que l'on peut traiter comme s'il s'agissait d'un dictionnaire Python.
+
+## 3. Traitement de la réponse renvoyée par l'API
+
+Il est possible de définir une fonction qui interroge l'API à partir d'une adresse postale au choix, passée en paramètre.
+
+!!! note "Première façon : récupérer l'ensemble des données"
+    La fonction `interroger_API_BAN` prend en arguments `adresse` (une chaîne de caractères) et `code_postal` (entier ou chaîne de caractères) et renvoie `reponse` qui est un dictionnaire contenant toutes les données renvoyées par l'API.
+
+    ```python linenums='1'
+    def interroger_API_BAN(adresse, code_postal):
+        url = f"https://api-adresse.data.gouv.fr/search/?q={adresse}&postcode={code_postal}"
+        reponse = requests.get(url)
+        reponse = reponse.json()
+        return reponse
+    ```
+    Remarques : Penser à importer le module `requests` ! L'utilisation d'une f-string pour l'écriture de l'URL permet d'y intégrer simplement et lisiblement les paramètres d'entrée de la fonction. Et ici, la fonction renvoie l'ensemble des données récupérées via l'API. La plupart du temps, on souhaite néanmoins isoler les données qui nous intéressent et elles seules.
+
+!!! note "Deuxième façon : renvoyer uniquement des données qui nous intéressent"
+    La fonction `interroger_API_BAN` prend toujours en arguments `adresse` (une chaîne de caractères) et `code_postal` (entier ou chaîne de caractères) et renvoie un couple `(lat, long)` (tuple) des coordonnées géographiques.
+
+    ```python linenums='1'
+    def interroger_API_BAN(adresse, code_postal):
+    url = f"https://api-adresse.data.gouv.fr/search/?q={adresse}&postcode={code_postal}"
+    reponse = requests.get(url)
+    reponse = reponse.json()
+    coord = reponse['features'][0]['geometry']['coordinates']
+    long = coord[0]
+    lat = coord[1]
+    return (lat, long)
+    ```
+    Remarques : Une fois la réponse de l'API transformée en dictionnaire, il suffit de naviguer pour récupérer les données qui nous intéressent, comme par exemple les coordonnées géographiques de l'adresse passée en paramètre.
+
+    - `reponse` est un dictionnaire possédant huit clés : `'type'`, `'version'`, `'features'`, `'attribution'`, `'licence'`, `'query'`, `'filters'` et `'limit'`.
+    - `reponse['features']` est un tableau contenant un ou plusieurs éléments de type dictionnaire : chaque dictionnaire correspond à une adresse potentielle, la première (indice 0) étant la plus susceptible de correspondre à notre demande.
+    - `reponse['features'][0]` est un dictionnaire possédant trois clés : `'type'`, `'geometry'` et `'properties'`.
+    - `reponse['features'][0]['geometry']` est un dictionnaire possédant deux clés : `'type'` et `'coordinates'`.
+    - `reponse['features'][0]['geometry']['coordinates']` est un tableau contenant deux éléments de type flottant : la longitude (indice `0`) et la latitude (indice `1`) du lieu.
+
+!!! done "Ce que vous savez maintenant"
+    - Envoyer une requête à une API avec le module `requests`.
+    - Sélectionner des informations dans la réponse renvoyée par une API.
+    - Consulter la documentation d'une API.
+
+## 4. À vous de faire
+### 4.1 Astéroïdes à surveiller
+[_Near Earth Object Web Service_](https://api.nasa.gov/) (*NEOWS*) est une API par l'intermédiaire de laquelle la NASA met à disposition des données sur les astéroïdes passant à proximité de la Terre.
+
+Contrairement à l'API *Base Adresse Nationale*, l'utilisation de cette API nécessite de disposer d'une **clé d'API**, qui permet d'identifier le programme consommateur et éventuellement de limiter le nombre de requêtes autorisées.
+
+La clé de démonstration `DEMO_KEY` est fournie par la NASA pour tester l'API. Le nombre de requêtes est néanmoins limité à 30 par heure et par adresse IP et à 50 par jour et par adresse IP. Vous pouvez vous inscrire [ici](https://api.nasa.gov/) pour obtenir une clé gratuite personnelle.
+
+[Notebook  : ex_asteroides.ipynb](data/ex_asteroides.ipynb)
+
+### 4.2 Bulletin météo
+L'API OpenWeatherMap permet de récupérer les données météorologiques d'un lieu donné.
+
+Contrairement à l'API Base Adresse Nationale, l'utilisation de cette API nécessite de disposer d'une **clé d'API**, qui permet d'identifier le programme consommateur et éventuellement de limiter le nombre de requêtes autorisées. Vous pouvez vous inscrire [ici](https://openweathermap.org/price) pour obtenir une clé gratuite personnelle.
+
+[Notebook : ex_bulletin_meteo.ipynb](data/ex_bulletin_meteo.ipynb)
+
+### 4.3 Composition de produits alimentaires
+L'API Open Food Facts permet de récupérer des informations sur un produit alimentaire à partir de son numéro de code-barres. Par exemple, pour le produit dont le code-barres est 8076800376999, il suffit d'envoyer une requête GET à l'URL [https://world.openfoodfacts.org/api/v0/product/8076800376999.json](https://world.openfoodfacts.org/api/v0/product/8076800376999.json).
+
+[Notebook : ex_openfoodfacts.ipynb](data/ex_openfoodfacts.ipynb)
