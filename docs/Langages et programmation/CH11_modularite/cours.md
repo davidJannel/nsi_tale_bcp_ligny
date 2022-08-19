@@ -98,3 +98,8 @@ Contrairement à l'API Base Adresse Nationale, l'utilisation de cette API néces
 L'API Open Food Facts permet de récupérer des informations sur un produit alimentaire à partir de son numéro de code-barres. Par exemple, pour le produit dont le code-barres est 8076800376999, il suffit d'envoyer une requête GET à l'URL [https://world.openfoodfacts.org/api/v0/product/8076800376999.json](https://world.openfoodfacts.org/api/v0/product/8076800376999.json).
 
 [Notebook : ex_openfoodfacts.ipynb](data/ex_openfoodfacts.ipynb)
+
+??? tip "Sources"
+    - [https://ntoulzac.github.io/Cours-NSI-Terminale/api/](https://ntoulzac.github.io/Cours-NSI-Terminale/api/)
+    - Numérique et Sciences Informatiques, Terminale, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
+    - Prépabac NSI, Terminale, G. CONNAN, V. PETROV, G. ROZSAVOLGYI, L. SIGNAC, éditions HATIER.

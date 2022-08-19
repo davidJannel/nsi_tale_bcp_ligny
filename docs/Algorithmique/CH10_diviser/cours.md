@@ -352,5 +352,5 @@ Une jolie animation permettant de comparer les tris :
 Issue de ce [site](https://www.toptal.com/developers/sorting-algorithms)
 
 ??? tip "Sources"
-    - [https://glassus.github.io/terminale_nsi/T3_Algorithmique/3.1_Diviser_pour_regner/cours/](https://glassus.github.io/terminale_nsi/T3_Algorithmique/3.1_Diviser_pour_regner/cours/)
+    Page tirée de : [https://glassus.github.io/terminale_nsi/T3_Algorithmique/3.1_Diviser_pour_regner/cours/](https://glassus.github.io/terminale_nsi/T3_Algorithmique/3.1_Diviser_pour_regner/cours/)
     

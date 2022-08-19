@@ -20,7 +20,7 @@
    - [CH10 : Diviser pour régner (BAC)](Algorithmique/CH10_diviser/cours.md)
    - [CH11 : Modularité - API](Langages et programmation/CH11_modularite/cours.md)
 
-## Références et sites uitlisés:
+## Références et sites utilisés:
    - Livre Hachette - NSI Spécialité terminale
    - Alain BUSSER : [https://alainbusser.frama.io/NSI-IREMI-974/](https://alainbusser.frama.io/NSI-IREMI-974/)
    - Guillaume Connan: [https://gitlab.com/lyceeND/tale](https://gitlab.com/lyceeND/tale)

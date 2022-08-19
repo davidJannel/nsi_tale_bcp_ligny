@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="../../../xtra/stylesheets/pyoditeur.css">
     
+      <link rel="stylesheet" href="../../../xtra/stylesheets/qcm.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -450,6 +452,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-traitement-de-la-reponse-renvoyee-par-lapi" class="md-nav__link">
+    3. Traitement de la réponse renvoyée par l'API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-a-vous-de-faire" class="md-nav__link">
+    4. À vous de faire
+  </a>
+  
+    <nav class="md-nav" aria-label="4. À vous de faire">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-asteroides-a-surveiller" class="md-nav__link">
+    4.1 Astéroïdes à surveiller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-bulletin-meteo" class="md-nav__link">
+    4.2 Bulletin météo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-composition-de-produits-alimentaires" class="md-nav__link">
+    4.3 Composition de produits alimentaires
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -754,7 +797,7 @@ Par exemple, pour utiliser une fonction il suffit de connaître sa spécificatio
 </code></pre></div>
 <p>La réponse reçue est au format JSON (JavaScript Object Notation). La signification des champs de la réponse est donnée dans la <a href="https://adresse.data.gouv.fr/api-doc/adresse">documentation</a> de l'API.</p>
 <p>L'interrogation de l'API peut être réalisée grâce au code Python ci-dessous. Lors de son exécution, la réponse renvoyée par l'API est stockée dans la variable reponse.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -762,6 +805,82 @@ Par exemple, pour utiliser une fonction il suffit de connaître sa spécificatio
 <span class="n">reponse</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">reponse</span> <span class="o">=</span> <span class="n">reponse</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
+- La fonction <code>get</code> du module <code>requests</code> permet d'envoyer une requête GET à l'URL spécifiée et ensuite de récupérer la réponse.
+- La commande <code>reponse.json()</code> extrait de la réponse les données encodées dans le format JSON, qui est un format de données textuelles que l'on peut traiter comme s'il s'agissait d'un dictionnaire Python.</p>
+<h2 id="3-traitement-de-la-reponse-renvoyee-par-lapi">3. Traitement de la réponse renvoyée par l'API<a class="headerlink" href="#3-traitement-de-la-reponse-renvoyee-par-lapi" title="Permanent link">⚓︎</a></h2>
+<p>Il est possible de définir une fonction qui interroge l'API à partir d'une adresse postale au choix, passée en paramètre.</p>
+<div class="admonition note">
+<p class="admonition-title">Première façon : récupérer l'ensemble des données</p>
+<p>La fonction <code>interroger_API_BAN</code> prend en arguments <code>adresse</code> (une chaîne de caractères) et <code>code_postal</code> (entier ou chaîne de caractères) et renvoie <code>reponse</code> qui est un dictionnaire contenant toutes les données renvoyées par l'API.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">interroger_API_BAN</span><span class="p">(</span><span class="n">adresse</span><span class="p">,</span> <span class="n">code_postal</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api-adresse.data.gouv.fr/search/?q=</span><span class="si">{</span><span class="n">adresse</span><span class="si">}</span><span class="s2">&amp;postcode=</span><span class="si">{</span><span class="n">code_postal</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">reponse</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">reponse</span> <span class="o">=</span> <span class="n">reponse</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">reponse</span>
+</code></pre></div></td></tr></table></div>
+Remarques : Penser à importer le module <code>requests</code> ! L'utilisation d'une f-string pour l'écriture de l'URL permet d'y intégrer simplement et lisiblement les paramètres d'entrée de la fonction. Et ici, la fonction renvoie l'ensemble des données récupérées via l'API. La plupart du temps, on souhaite néanmoins isoler les données qui nous intéressent et elles seules.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Deuxième façon : renvoyer uniquement des données qui nous intéressent</p>
+<p>La fonction <code>interroger_API_BAN</code> prend toujours en arguments <code>adresse</code> (une chaîne de caractères) et <code>code_postal</code> (entier ou chaîne de caractères) et renvoie un couple <code>(lat, long)</code> (tuple) des coordonnées géographiques.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">interroger_API_BAN</span><span class="p">(</span><span class="n">adresse</span><span class="p">,</span> <span class="n">code_postal</span><span class="p">):</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api-adresse.data.gouv.fr/search/?q=</span><span class="si">{</span><span class="n">adresse</span><span class="si">}</span><span class="s2">&amp;postcode=</span><span class="si">{</span><span class="n">code_postal</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">reponse</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">reponse</span> <span class="o">=</span> <span class="n">reponse</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">coord</span> <span class="o">=</span> <span class="n">reponse</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;geometry&#39;</span><span class="p">][</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]</span>
+<span class="n">long</span> <span class="o">=</span> <span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">return</span> <span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">long</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+Remarques : Une fois la réponse de l'API transformée en dictionnaire, il suffit de naviguer pour récupérer les données qui nous intéressent, comme par exemple les coordonnées géographiques de l'adresse passée en paramètre.</p>
+<ul>
+<li><code>reponse</code> est un dictionnaire possédant huit clés : <code>'type'</code>, <code>'version'</code>, <code>'features'</code>, <code>'attribution'</code>, <code>'licence'</code>, <code>'query'</code>, <code>'filters'</code> et <code>'limit'</code>.</li>
+<li><code>reponse['features']</code> est un tableau contenant un ou plusieurs éléments de type dictionnaire : chaque dictionnaire correspond à une adresse potentielle, la première (indice 0) étant la plus susceptible de correspondre à notre demande.</li>
+<li><code>reponse['features'][0]</code> est un dictionnaire possédant trois clés : <code>'type'</code>, <code>'geometry'</code> et <code>'properties'</code>.</li>
+<li><code>reponse['features'][0]['geometry']</code> est un dictionnaire possédant deux clés : <code>'type'</code> et <code>'coordinates'</code>.</li>
+<li><code>reponse['features'][0]['geometry']['coordinates']</code> est un tableau contenant deux éléments de type flottant : la longitude (indice <code>0</code>) et la latitude (indice <code>1</code>) du lieu.</li>
+</ul>
+</div>
+<div class="admonition done">
+<p class="admonition-title">Ce que vous savez maintenant</p>
+<ul>
+<li>Envoyer une requête à une API avec le module <code>requests</code>.</li>
+<li>Sélectionner des informations dans la réponse renvoyée par une API.</li>
+<li>Consulter la documentation d'une API.</li>
+</ul>
+</div>
+<h2 id="4-a-vous-de-faire">4. À vous de faire<a class="headerlink" href="#4-a-vous-de-faire" title="Permanent link">⚓︎</a></h2>
+<h3 id="41-asteroides-a-surveiller">4.1 Astéroïdes à surveiller<a class="headerlink" href="#41-asteroides-a-surveiller" title="Permanent link">⚓︎</a></h3>
+<p><a href="https://api.nasa.gov/"><em>Near Earth Object Web Service</em></a> (<em>NEOWS</em>) est une API par l'intermédiaire de laquelle la NASA met à disposition des données sur les astéroïdes passant à proximité de la Terre.</p>
+<p>Contrairement à l'API <em>Base Adresse Nationale</em>, l'utilisation de cette API nécessite de disposer d'une <strong>clé d'API</strong>, qui permet d'identifier le programme consommateur et éventuellement de limiter le nombre de requêtes autorisées.</p>
+<p>La clé de démonstration <code>DEMO_KEY</code> est fournie par la NASA pour tester l'API. Le nombre de requêtes est néanmoins limité à 30 par heure et par adresse IP et à 50 par jour et par adresse IP. Vous pouvez vous inscrire <a href="https://api.nasa.gov/">ici</a> pour obtenir une clé gratuite personnelle.</p>
+<p><a href="../data/ex_asteroides.ipynb">Notebook  : ex_asteroides.ipynb</a></p>
+<h3 id="42-bulletin-meteo">4.2 Bulletin météo<a class="headerlink" href="#42-bulletin-meteo" title="Permanent link">⚓︎</a></h3>
+<p>L'API OpenWeatherMap permet de récupérer les données météorologiques d'un lieu donné.</p>
+<p>Contrairement à l'API Base Adresse Nationale, l'utilisation de cette API nécessite de disposer d'une <strong>clé d'API</strong>, qui permet d'identifier le programme consommateur et éventuellement de limiter le nombre de requêtes autorisées. Vous pouvez vous inscrire <a href="https://openweathermap.org/price">ici</a> pour obtenir une clé gratuite personnelle.</p>
+<p><a href="../data/ex_bulletin_meteo.ipynb">Notebook : ex_bulletin_meteo.ipynb</a></p>
+<h3 id="43-composition-de-produits-alimentaires">4.3 Composition de produits alimentaires<a class="headerlink" href="#43-composition-de-produits-alimentaires" title="Permanent link">⚓︎</a></h3>
+<p>L'API Open Food Facts permet de récupérer des informations sur un produit alimentaire à partir de son numéro de code-barres. Par exemple, pour le produit dont le code-barres est 8076800376999, il suffit d'envoyer une requête GET à l'URL <a href="https://world.openfoodfacts.org/api/v0/product/8076800376999.json">https://world.openfoodfacts.org/api/v0/product/8076800376999.json</a>.</p>
+<p><a href="../data/ex_openfoodfacts.ipynb">Notebook : ex_openfoodfacts.ipynb</a></p>
+<details class="tip">
+<summary>Sources</summary>
+<ul>
+<li><a href="https://ntoulzac.github.io/Cours-NSI-Terminale/api/">https://ntoulzac.github.io/Cours-NSI-Terminale/api/</a></li>
+<li>Numérique et Sciences Informatiques, Terminale, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.</li>
+<li>Prépabac NSI, Terminale, G. CONNAN, V. PETROV, G. ROZSAVOLGYI, L. SIGNAC, éditions HATIER.</li>
+</ul>
+</details>
 
               
     <script src="../../../js/ide.js"></script> 
@@ -854,6 +973,8 @@ Par exemple, pour utiliser une fonction il suffit de connaître sa spécificatio
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
       
     
   </body>

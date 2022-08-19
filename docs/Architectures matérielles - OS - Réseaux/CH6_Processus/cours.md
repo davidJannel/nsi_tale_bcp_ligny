@@ -262,6 +262,7 @@ Notebook sur la situation d'interblocage en utilisant Python : [CH6_TP_interbloc
 
 
 ??? tip "Sources"
+    Pages tirées de :
     - [https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.2_Gestion_des_processus](https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.2_Gestion_des_processus/cours/)
     - [http://info-mounier.fr/terminale_nsi/archi_se_reseaux/processus.php](http://info-mounier.fr/terminale_nsi/archi_se_reseaux/processus.php)
     - [http://lycee.educinfo.org/index.php?page=creation_thread&activite=processus](http://lycee.educinfo.org/index.php?page=creation_thread&activite=processus)

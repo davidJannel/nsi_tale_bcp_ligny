@@ -78,3 +78,23 @@ p2.addEventListener('click', () => { paintACE('ace/theme/crimson_editor') });
 
 var p1 = document.querySelector('input[id="__palette_1"]')
 p1.addEventListener('click', () => { paintACE('ace/theme/tomorrow_night_bright') });
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('pre code.qcm').forEach((el) => {
+    hljs.highlightElement(el);
+    });
+});
+
+document.querySelectorAll("[id^=qcm_]").forEach((el) => {
+    let qcmAns = el.childNodes;
+    if (el.dataset.shuffle == 1) {
+    for (let i = qcmAns.length - 1; i >= 0; i--) el.appendChild(qcmAns[Math.floor(Math.random() * i)])
+    }
+    
+    for (let element of el.children) {
+    element.addEventListener('click', () => {
+        element.firstChild.disabled = true
+        element.firstChild.checked = true
+    })
+    }
+});

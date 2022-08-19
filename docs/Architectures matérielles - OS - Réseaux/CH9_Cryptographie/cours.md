@@ -316,7 +316,7 @@ Le transmission par protocole ```http``` de données chiffrées au préalable av
 
 
 ??? tip "Sources"
-    - [https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.4_Cryptographie/cours/](https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.4_Cryptographie/cours/)
+    - Page tirée de : [https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.4_Cryptographie/cours/](https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.4_Cryptographie/cours/)
     - Numérique et Sciences Informatiques, Terminale, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
     - Prépabac NSI, Terminale, G. CONNAN, V. PETROV, G. ROZSAVOLGYI, L. SIGNAC, éditions HATIER.
     - https://www.cloudflare.com/fr-fr/learning/ssl/what-happens-in-a-tls-handshake/

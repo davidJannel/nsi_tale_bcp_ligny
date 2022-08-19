@@ -155,7 +155,7 @@ L'orientation actuelle de l'électronique est donc à la fois :
 
 
 ??? quote "Bibliographie / Sitographie"
-    - [https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.1_Systemes_sur_puce](https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.1_Systemes_sur_puce/cours/)
+    - Page tirée de : [https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.1_Systemes_sur_puce](https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.1_Systemes_sur_puce/cours/)
     - Numérique et Sciences Informatiques, Terminale, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
     - Prépabac NSI, Terminale, G.CONNAN, V.PETROV, G.ROZSAVOLGYI, L.SIGNAC, éditions HATIER.
     - [https://fr.wikipedia.org/wiki/Loi_de_Moore](https://fr.wikipedia.org/wiki/Loi_de_Moore){. target="_blank"}
