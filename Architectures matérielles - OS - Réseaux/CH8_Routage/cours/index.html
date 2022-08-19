@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="../../../xtra/stylesheets/pyoditeur.css">
     
+      <link rel="stylesheet" href="../../../xtra/stylesheets/qcm.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -86,6 +88,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#ch8-routage" class="md-skip">
+          Aller au contenu
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -584,10 +591,165 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CH8 Routage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         CH8 Routage
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rappels-de-premiere-sur-les-reseaux" class="md-nav__link">
+    Rappels de première sur les réseaux
+  </a>
+  
+    <nav class="md-nav" aria-label="Rappels de première sur les réseaux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cours" class="md-nav__link">
+    Cours
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-rapide" class="md-nav__link">
+    Test rapide
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-routeur-et-routage" class="md-nav__link">
+    1. Routeur et routage
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Routeur et routage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-quest-ce-quun-routeur" class="md-nav__link">
+    1.1 Qu'est ce qu'un routeur ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-quel-est-son-role" class="md-nav__link">
+    1.2 Quel est son role ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-quest-ce-que-le-routage" class="md-nav__link">
+    1.3 Qu'est ce que le routage ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-tables-de-routage" class="md-nav__link">
+    1.4 Tables de routage.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-protocoles-de-routage" class="md-nav__link">
+    2. Protocoles de routage
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Protocoles de routage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-protocole-rip" class="md-nav__link">
+    2.1 protocole RIP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-protocole-ospf" class="md-nav__link">
+    2.2 protocole OSPF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trouver-le-plus-court-chemin-dans-un-graphe-pondere" class="md-nav__link">
+    Trouver le plus court chemin dans un graphe pondéré
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-exercices" class="md-nav__link">
+    3. Exercices
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Exercices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extrait-du-sujet-0-bac" class="md-nav__link">
+    extrait du sujet 0 - BAC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021-sujet-metropole-1" class="md-nav__link">
+    2021, sujet Métropole 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -691,9 +853,726 @@
                 
 
 
-  <h1>CH8 Routage</h1>
+<h1 id="ch8-routage">CH8 : Routage<a class="headerlink" href="#ch8-routage" title="Permanent link">⚓︎</a></h1>
+<details class="note">
+<summary>Programme officiel</summary>
+<p><img alt="image" class="center" src="../img/BO.png" /></p>
+</details>
+<h2 id="rappels-de-premiere-sur-les-reseaux">Rappels de première sur les réseaux<a class="headerlink" href="#rappels-de-premiere-sur-les-reseaux" title="Permanent link">⚓︎</a></h2>
+<h3 id="cours">Cours<a class="headerlink" href="#cours" title="Permanent link">⚓︎</a></h3>
+<p><a href="http://www.lumni.fr/video/l-architecture-des-reseaux-et-les-protocoles-de-communications" title="Cours réseaux 1ère"><img alt="Vidéo cours Réseaux 1ère - Lumni" src="http://www.lumni.fr/video/l-architecture-des-reseaux-et-les-protocoles-de-communications" /></a></p>
+<div class="admonition savoir">
+<p class="admonition-title">Notations à connaître par coeur</p>
+<ul>
+<li>Une adresse IPv4 estcomposée de 4 octets, soit 32 bits. Elle est notée a.b.c.d, où a, b, c et d sont les valeurs des 4 octets.</li>
+<li>La notation a.b.c.d/n signifie que les n premiers bits de l'adresse IP représentent la partie « réseau », les bits qui suivent représentent la partie « machine ».</li>
+<li>L'adresse IPv4 dont tous les bits de la partie « machine » sont à 0 est appelée « adresse du réseau ».</li>
+<li>L'adresse IPv4 dont tous les bits de la partie « machine » sont à 1 est appelée « adresse de diffusion » ou de « broadcast » <img alt="🇬🇧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" title=":gb:" />.</li>
+</ul>
+</div>
+<h3 id="test-rapide">Test rapide<a class="headerlink" href="#test-rapide" title="Permanent link">⚓︎</a></h3>
+<div class="admonition check">
+<p class="admonition-title">question 1</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">qcm</label><label for="__tabbed_1_2">éléments de correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>La communication d'information entre deux machines se fait :</p>
+<p><div class="wrapper_qcm" id = "qcm_qwgkmb" data-n-correct = 1 data-shuffle = 1 ><span><input type="checkbox" id="qwgkmb-0" class="qcm-checkbox correct reveal"><span class="check-toggle"></span><label for="qwgkmb-0" class="qcm-item arithmatex">par paquets</label></span><span><input type="checkbox" id="qwgkmb-1" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="qwgkmb-1" class="qcm-item arithmatex">en continu</label></span><span><input type="checkbox" id="qwgkmb-2" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="qwgkmb-2" class="qcm-item arithmatex">en série</label></span><span><input type="checkbox" id="qwgkmb-3" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="qwgkmb-3" class="qcm-item arithmatex">en parallèle</label></span></div></p>
+</div>
+<div class="tabbed-block">
+<p>La communication entre deux machines se fait par paquets. Revoir cours de première.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition check">
+<p class="admonition-title">question 2</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">qcm</label><label for="__tabbed_2_2">éléments de correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Quelles sont les adresses IP valides ?</p>
+<p><div class="wrapper_qcm" id = "qcm_fzsyxw" data-n-correct = 2 data-shuffle = 1 ><span><input type="checkbox" id="fzsyxw-0" class="qcm-checkbox correct reveal"><span class="check-toggle"></span><label for="fzsyxw-0" class="qcm-item arithmatex">192.168.1.16</label></span><span><input type="checkbox" id="fzsyxw-1" class="qcm-checkbox correct reveal"><span class="check-toggle"></span><label for="fzsyxw-1" class="qcm-item arithmatex">10.0.0.1</label></span><span><input type="checkbox" id="fzsyxw-2" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="fzsyxw-2" class="qcm-item arithmatex">192.256.45.2</label></span><span><input type="checkbox" id="fzsyxw-3" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="fzsyxw-3" class="qcm-item arithmatex">10.54.16</label></span></div></p>
+</div>
+<div class="tabbed-block">
+<p>Les adresses IPv4 sont codées sur 32 bits. Donc sur 4 octets et la valeur d'un octet est comprise entre 0 et 255.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition check">
+<p class="admonition-title">question 3</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">qcm</label><label for="__tabbed_3_2">éléments de correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>L'adresse IP en binaire d'une machine est "11000000.10101000.00010000.10011000". Quelle est sa représentation en décimal ?</p>
+<p><div class="wrapper_qcm" id = "qcm_kvcmus" data-n-correct = 1 data-shuffle = 1 ><span><input type="checkbox" id="kvcmus-0" class="qcm-checkbox correct reveal"><span class="check-toggle"></span><label for="kvcmus-0" class="qcm-item arithmatex">192.168.16.152</label></span><span><input type="checkbox" id="kvcmus-1" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="kvcmus-1" class="qcm-item arithmatex">192.168.8.152</label></span><span><input type="checkbox" id="kvcmus-2" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="kvcmus-2" class="qcm-item arithmatex">192.168.16.76</label></span><span><input type="checkbox" id="kvcmus-3" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="kvcmus-3" class="qcm-item arithmatex">3.21.8.25</label></span></div></p>
+</div>
+<div class="tabbed-block">
+<p>Revoir les conversions binaire/décimal.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition check">
+<p class="admonition-title">question 4</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">qcm</label><label for="__tabbed_4_2">éléments de correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>L'adresse IP d'une machine est 192.168.1.16/24. Quelle est l'adresse du réseau ?</p>
+<p><div class="wrapper_qcm" id = "qcm_ydpmrw" data-n-correct = 1 data-shuffle = 1 ><span><input type="checkbox" id="ydpmrw-0" class="qcm-checkbox correct reveal"><span class="check-toggle"></span><label for="ydpmrw-0" class="qcm-item arithmatex">192.168.1.0</label></span><span><input type="checkbox" id="ydpmrw-1" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="ydpmrw-1" class="qcm-item arithmatex">0.0.0.16</label></span><span><input type="checkbox" id="ydpmrw-2" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="ydpmrw-2" class="qcm-item arithmatex">192.168.1.24</label></span><span><input type="checkbox" id="ydpmrw-3" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="ydpmrw-3" class="qcm-item arithmatex">192.168.0.0</label></span></div></p>
+</div>
+<div class="tabbed-block">
+<p>192.168.1.16/24 donc les 24 premiers bits ou les trois premiers octets représentent la partie réseau. Pour avoir l'adresse du réseau on met les bits de la partie machine à 0. Donc le dernier octet vaut 0.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition check">
+<p class="admonition-title">question 5</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">qcm</label><label for="__tabbed_5_2">éléments de correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>L'adresse IP d'une machine est 192.168.1.16/24. Quel est le nombre maximal de machines que l'on peut connecter sur le réseau ?</p>
+<p><div class="wrapper_qcm" id = "qcm_pzqzra" data-n-correct = 1 data-shuffle = 1 ><span><input type="checkbox" id="pzqzra-0" class="qcm-checkbox correct reveal"><span class="check-toggle"></span><label for="pzqzra-0" class="qcm-item arithmatex">254</label></span><span><input type="checkbox" id="pzqzra-1" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="pzqzra-1" class="qcm-item arithmatex">255</label></span><span><input type="checkbox" id="pzqzra-2" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="pzqzra-2" class="qcm-item arithmatex">256</label></span><span><input type="checkbox" id="pzqzra-3" class="qcm-checkbox incorrect reveal"><span class="check-toggle"></span><label for="pzqzra-3" class="qcm-item arithmatex">16</label></span></div></p>
+</div>
+<div class="tabbed-block">
+<p>Les trois premiers octets étant réservés pour le réseau, il reste donc 1 octet (8 bits) pour les adresses machines. Cela nous donne 256 possibilités moins 2 (adresse du réseau à 0 et celle de broadcast à 255) donc 254 machines maximum.</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="1-routeur-et-routage">1. Routeur et routage<a class="headerlink" href="#1-routeur-et-routage" title="Permanent link">⚓︎</a></h2>
+<h3 id="11-quest-ce-quun-routeur">1.1 Qu'est ce qu'un routeur ?<a class="headerlink" href="#11-quest-ce-quun-routeur" title="Permanent link">⚓︎</a></h3>
+<div class="admonition savoir">
+<p class="admonition-title">Définition</p>
+<p>Un <strong>routeur</strong> est un matériel réseau (une sorte d'ordinateur), qui a vocation a relayer / router les paquets d'information reçus en entrée, vers leur prochaine destination (le prochain routeur), voire leur destination finale (lorsqu'ils sont arrivés). Un routeur dispose de (au moins) 2 interfaces réseau :</p>
+<ul>
+<li>Chaque interface réseau d'un routeur dispose d'une adresse IP distincte</li>
+<li>Chaque interface réseau d'un routeur définit un réseau différent</li>
+</ul>
+</div>
+<p>Une " box internet " est un routeur. Elle permet de transférer des informations (paquets) entre le réseau local (ordinateurs, smartphones, TV, objets connectés ...) de la maison et le " réseau internet ".</p>
+<p><img alt="Image" src="../img/box_domestique.png" /></p>
+<p>Cette box comprend :</p>
+<ul>
+<li>une interface est connectée au réseau de votre opérateur / Fournisseur d'Accès (FAI)</li>
+<li>une ou plusieurs interfaces filaires (ethernet) connectées à votre réseau local</li>
+<li>une interface Wifi</li>
+</ul>
+<p>En fait, une box familiale joue plusieurs rôles:</p>
+<ul>
+<li>Le rôle de routeur pour déterminer les meilleurs routes par lesquelles acheminer/router les paquets de données.</li>
+<li>Le rôle de passerelle / gateway <img alt="🇬🇧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" title=":gb:" /> pour sortir du réseau local.</li>
+<li>le rôle de commutateur / switch <img alt="🇬🇧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" title=":gb:" /> pour permettre la communication entre eux des hôtes d'un même réseau.</li>
+</ul>
+<h3 id="12-quel-est-son-role">1.2 Quel est son role ?<a class="headerlink" href="#12-quel-est-son-role" title="Permanent link">⚓︎</a></h3>
+<p>Essentiellement, le rôle d'un routeur est de:</p>
+<h4 id="relayer-router-les-paquets-de-donnees">Relayer / Router les paquets de données<a class="headerlink" href="#relayer-router-les-paquets-de-donnees" title="Permanent link">⚓︎</a></h4>
+<p>Chaque routeur reçoit des données en entrée, sous forme de paquets, et doit décider à qui les <strong>relayer / rediriger / router</strong> :</p>
+<ul>
+<li>vers le prochain routeur / passerelle / gateway, également surnommé le saut suivant / next hop <img alt="🇬🇧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" title=":gb:" />. En pratique, de manière équivalente, le routeur doit déterminer vers laquelle de ses propres interfaces de sortie / ports il doit relayer / router / rediriger le paquet. Pour prendre une telle décision, le routeur dispose de <strong>table de routage</strong>.</li>
+<li>vers la machine de destination, si le paquet est arrivé au routeur final, directement connecté réseau de destination.</li>
+</ul>
+<h4 id="maintenir-a-jour-ses-tables-de-routage">Maintenir à jour ses tables de Routage<a class="headerlink" href="#maintenir-a-jour-ses-tables-de-routage" title="Permanent link">⚓︎</a></h4>
+<p>Les réseaux sont soumis à des évolutions constantes, prévues ou pas, souhaitées ou pas. Cela oblige la mise à jour/le maintien réguliers des tables de routage dans les routeurs en cas d'ajout de nouveau matériel, de pannes imprévues, ...</p>
+<h3 id="13-quest-ce-que-le-routage">1.3 Qu'est ce que le routage ?<a class="headerlink" href="#13-quest-ce-que-le-routage" title="Permanent link">⚓︎</a></h3>
+<h3 id="14-tables-de-routage">1.4 Tables de routage.<a class="headerlink" href="#14-tables-de-routage" title="Permanent link">⚓︎</a></h3>
+<p>Une <strong>table de routage</strong> est une sorte de "panneau indicateur" qui donne les routes (les réseaux) joignables à partir du "carrefour" que constitue un routeur. Les paquets arrivent sur une interface de la machine. Pour "router" le paquet, le routeur fondera sa décision en deux temps :</p>
+<ul>
+<li>d’abord il regarde dans l’en-tête IP le réseau de destination et compare toutes les entrées dont il dispose dans sa table de routage;</li>
+<li>ensuite, si le réseau de destination est trouvé, il commute le paquet sur le bon port de sortie; si ce réseau n’est pas trouvé, le paquet est jeté.</li>
+</ul>
+<p><img alt="Image" src="../img/panneau_indicateur.png" /></p>
+<h4 id="quels-sont-les-elements-dune-table-de-routage">Quels sont les éléments d'une table de routage ?<a class="headerlink" href="#quels-sont-les-elements-dune-table-de-routage" title="Permanent link">⚓︎</a></h4>
+<p>Le routage IP peut trouvée une analogie avec le système routier ou encore le routage postal.</p>
+<ul>
+<li>Un <strong>réseau de destination et son masque</strong> = une ville</li>
+<li>Une <strong>passerelle</strong> ou <strong>une interface de sortie</strong> = une direction</li>
+<li>Une <strong>distance administrative</strong> ou <strong>métrique</strong> = un kilométrage</li>
+</ul>
+<h4 id="exemple">Exemple :<a class="headerlink" href="#exemple" title="Permanent link">⚓︎</a></h4>
+<p><img alt="Image" src="../img/reseau_cours.png" /></p>
+<p>Les tables de routage sont des informations stockées dans le routeur permettant d'aiguiller intelligemment les données qui lui sont transmises.</p>
+<p>Dans le réseau ci-dessus, si l'ordinateur d'adresse <code>192.168.0.5</code> veut interroger le serveur <code>10.7.3.8</code> :</p>
+<ul>
+<li>l'adresse <code>10.7.3.8</code> n'étant pas dans le sous-réseau F (d'adresse <code>192.168.0.0 / 24</code>), la requête est confiée au routeur via son adresse passerelle dans le réseau F (ici <code>192.168.0.254</code>).</li>
+<li>le routeur observe si l'IP recherchée appartient à un autre des sous-réseaux auquel il est connecté. Ici, l'IP recherchée <code>10.7.3.8</code> n'appartient ni au sous-réseau A ou E. </li>
+<li>le routeur va donc regarder dans sa table de routage l'adresse passerelle d'un autre routeur vers qui elle doit rediriger les données. Si le sous-réseau C fait partie de sa table de routage, le routeur R1 saura alors que le meilleur chemin est (par exemple) de confier les données au routeur R3.</li>
+<li>si le sous-réseau C ne fait pas partie de la table de routage, le routeur R1 va alors le rediriger vers une route «par défaut» (que l'on peut assimiler au panneau «toutes directions» sur les panneaux de signalisation).</li>
+</ul>
+<p>Par exemple, la table de routage du routeur R1 pourrait être :</p>
+<table>
+<thead>
+<tr>
+<th>Destination</th>
+<th>Passerelle</th>
+<th>Métrique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.0.0 /24</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>172.17.1.0 /24</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.0.5.0 /24</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.5.2.0 /24</td>
+<td>172.17.1.147</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10.7.3.0 /24</td>
+<td>10.0.5.135</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Dans notre exemple la métrique représente de nombre de saut pour atteindre le réseau de destination. Une distance égale à 1 signifie que le réseau de destination est directement connecté (protocole RIP) Ce n'est pas toujours le cas. On se préocupera de cette notion de métrique dans les protocoles de routage.</p>
+<details class="note">
+<summary>Exercice</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Énoncé</label><label for="__tabbed_6_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Construire les tables de routage de R2, R3 et R4. Attention sur le schéma, des routeur n'ont pas d'adresse pour leur interface (passerelle). Il faut donc en allouer une en faisant attention à ce qu'elle ne soit pas déja prise.</p>
+</div>
+<div class="tabbed-block">
+<p>Exemple de solutions :</p>
+<p>Pour R2 :</p>
+<table>
+<thead>
+<tr>
+<th>Destination</th>
+<th>Passerelle</th>
+<th>Metrique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>172.17.1.0 /24</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.5.2.0 /24</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>192.168.0.0 /24</td>
+<td>172.17.1.254</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10.0.5.0 /24</td>
+<td>172.17.1.254</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10.7.3.0 /24</td>
+<td>10.5.2.254</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Pour R3 :</p>
+<table>
+<thead>
+<tr>
+<th>Destination</th>
+<th>Passerelle</th>
+<th>Metrique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.0.5.0 /24</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.7.3.0 /24</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>172.17.1.0 /24</td>
+<td>10.0.5.152</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10.5.2.0 /24</td>
+<td>10.7.3.132</td>
+<td>2</td>
+</tr>
+<tr>
+<td>192.168.0.0 /24</td>
+<td>10.0.5.152</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Pour R4 :</p>
+<table>
+<thead>
+<tr>
+<th>Destination</th>
+<th>Passerelle</th>
+<th>Metrique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.5.2.0 /24</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.7.3.0 /24</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.0.5.0 /24</td>
+<td>10.7.3.254</td>
+<td>2</td>
+</tr>
+<tr>
+<td>172.17.1.0 /24</td>
+<td>10.5.2.138</td>
+<td>2</td>
+</tr>
+<tr>
+<td>192.168.0.0 /24</td>
+<td>10.5.2.138</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Remarque : pour atteindre le réseau 192.168.0.0, on peut passer par la passerelle 10.7.3.254 en 3 sauts également. </p>
+</div>
+</div>
+</div>
+</details>
+<div class="admonition savoir">
+<p class="admonition-title">À retenir</p>
+<p>Lorsque que l'adresse IP de destination d'un paquet ne fait pas partie du sous réseau auquel la machine émettrice appartient, le routeur interroge sa table de routage pour connaître l'adresse de la passerelle vers qui rediriger le paquet.</p>
+<p>Dans la table de routage on va donc trouver :</p>
+<ul>
+<li>l'<strong>adresse du réseau destinataire</strong> (avec le masque de sous réseau).</li>
+<li>l'<strong>adresse de la passerelle</strong>. C'est l'adresse du routeur suivant vers qui on doit acheminer le paquet. Lorsque le réseau de destination est directement accessible on ne note pas l'adresse ou on met <code>0.0.0.0</code> (C'est une adresse invalide  qui signifie "toutes directions" ou "destination non spécifiée".). Dans certaines tables simplifiées, on donne directement le nom du routeur suivant (R2, R3 ...).</li>
+<li>l'<strong>interface</strong> (wifi, ethernet ...). Dans nos exercices et exemples, elle n'est pas toujours renseignée car l'info est non essentielle pour comprendre le mécanisme de routage.</li>
+<li>la <strong>métrique</strong> ou le <strong>nombre de sauts</strong> (cela va dépendre du protocole utilisé : RIP, OSPF ...)</li>
+</ul>
+</div>
+<h4 id="comment-sont-construites-les-tables-de-routage">Comment sont construites les tables de routage ?<a class="headerlink" href="#comment-sont-construites-les-tables-de-routage" title="Permanent link">⚓︎</a></h4>
+<ul>
+<li>Soit à la main par l'administrateur réseau, quand le réseau est petit : on parle alors de table <strong>statique</strong>.</li>
+<li>Soit de manière <strong>dynamique</strong> : les réseaux s'envoient eux-mêmes des informations permettant de mettre à jour leurs tables de routages respectives. Des algorithmes de détermination de meilleur chemin sont alors utilisés : nous allons en découvrir deux, le protocole RIP et le protocole OSPF.</li>
+</ul>
+<h2 id="2-protocoles-de-routage">2. Protocoles de routage<a class="headerlink" href="#2-protocoles-de-routage" title="Permanent link">⚓︎</a></h2>
+<h3 id="21-protocole-rip">2.1 protocole RIP<a class="headerlink" href="#21-protocole-rip" title="Permanent link">⚓︎</a></h3>
+<p>Le protocole <strong>RIP - Routing Information Protocol</strong> <img alt="🇬🇧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" title=":gb:" /> est un protocole dit à vecteur de distance. Le protocole RIP est un des premiers algorithmes utilisés pour établir les tables de routage des routeurs interconnectant des réseaux.</p>
+<p>Les paquets sont acheminés en s’appuyant sur l’algorithme de Bellman-Ford (pas au BAC). Cet algorithme permet de calculer les plus courts chemins dans un graphe.</p>
+<h4 id="tp-rip-debranche">TP RIP débranché<a class="headerlink" href="#tp-rip-debranche" title="Permanent link">⚓︎</a></h4>
+<p><a href="../data/TP_RIP.pdf">sujet</a></p>
+<h4 id="etablissement-des-tables-de-routage">Établissement des tables de routage<a class="headerlink" href="#etablissement-des-tables-de-routage" title="Permanent link">⚓︎</a></h4>
+<p>Il comporte les 3 étapes suivantes :</p>
+<h5 id="-etape-1-">- Étape 1 -<a class="headerlink" href="#-etape-1-" title="Permanent link">⚓︎</a></h5>
+<p>Initialement (à la mise sous tension), la table de routage d’un routeur contient uniquement des informations sur ses voisins directs (ceux auxquels il est connecté).</p>
+<p>Exemple :</p>
+<p><img alt="Image" src="../img/diag_RIP.png" /></p>
+<p>Initialement (mise sous tension) la table de routage de R1 contient uniquement les réseaux 192.168.1.0 /24 et 10.1.1.0 /30.</p>
+<p>Table de routage de R1</p>
+<table>
+<thead>
+<tr>
+<th>Réseau destination</th>
+<th>Passerelle</th>
+<th>Interface</th>
+<th>Métrique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.0 /24</td>
+<td></td>
+<td>wlan0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.1.1.0 /30</td>
+<td></td>
+<td>eth1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Aucune passerelle n’est spécifiée car le routeur peut atteindre le réseau destination directement.</p>
+<h5 id="-etape-2-">- Étape 2 -<a class="headerlink" href="#-etape-2-" title="Permanent link">⚓︎</a></h5>
+<p>Chaque routeur envoie périodiquement (toutes les 30 secondes), à tous ses voisins (routeurs adjacents), un message contenant :</p>
+<ul>
+<li>la liste de toutes les adresses de réseaux qu’il connait (ses voisins directs et ceux qu’il a reçu auparavant)</li>
+<li>leur métrique (le nombre de sauts pour les atteindre).</li>
+</ul>
+<p>Ce couple d’informations (réseau, métrique) est appelé <em>vecteur de distance</em>.</p>
+<h5 id="-etape-3-">- Étape 3 -<a class="headerlink" href="#-etape-3-" title="Permanent link">⚓︎</a></h5>
+<p>À chaque réception d’un message de ce type, un routeur met à jour sa table de routage avec les informations reçues. Quatre cas peuvent se présenter :</p>
+<div class="highlight"><pre><span></span><code>1. il découvre une nouvelle route vers un sous réseau qu’il ne connaissait pas encore : il l’ajoute à sa table.
+2. il découvre une nouvelle route plus courte vers un sous réseau qu’il connaissait déjà : il remplace l’ancienne route par la nouvelle.
+3. il reçoit une nouvelle route plus longue vers un sous réseau qu’il connaissait déjà : il ne fait rien.
+4. il reçoit une route existante dans sa table (passant par le même voisin), mais plus longue. Cela signifie que la route s’est allongée (panne ?) : il met sa table à jour.
+</code></pre></div>
+<p>Pour renseigner la colonne « métrique », le protocole utilise le nombre de sauts, autrement dit, le nombre de routeurs qui doivent être traversés pour atteindre le réseau cible.</p>
+<p>Exemple :</p>
+<p>le routeur R1 reçoit des messages de la part de son seul voisin R3. Ce message contient les vecteurs de distance suivants :</p>
+<ul>
+<li>(10.1.2.0 /30 , 1)</li>
+<li>(10.1.3.0 /30 , 1)</li>
+<li>(10.1.4.0 /30 , 1)</li>
+<li>et tous les vecteurs de distance concernant les autres réseaux qu’il « connait ».</li>
+</ul>
+<p>Du point de vue de R1, R3 (d’adresse 10.1.1.2 /30) est une passerelle.</p>
+<p>Sa table de routage devient alors :</p>
+<p>Table de routage de R1</p>
+<table>
+<thead>
+<tr>
+<th>Réseau destination</th>
+<th>Passerelle</th>
+<th>Interface</th>
+<th>Métrique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.0 /24</td>
+<td></td>
+<td>wlan0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.1.1.0 /30</td>
+<td></td>
+<td>eth1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.1.2.0 /30</td>
+<td>10.1.1.2 /30</td>
+<td>eth1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10.1.3.0 /30</td>
+<td>10.1.1.2 /30</td>
+<td>eth1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10.1.4.0 /30</td>
+<td>10.1.1.2 /30</td>
+<td>eth1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h5 id="delai-de-convergence">Délai de convergence<a class="headerlink" href="#delai-de-convergence" title="Permanent link">⚓︎</a></h5>
+<p>On appelle délai de convergence le temps nécessaire à ce que l’ensemble des routeurs soient configurés pour offrir les meilleurs routes possible. À chaque modification du réseau (ajout ou suppression de routeurs), il faut un certain temps pour que les échanges de messages RIP mènent à une situation stable.</p>
+<p>C’est pour limiter ce délai de convergence que le protocole RIP est limité à 15 sauts.</p>
+<h5 id="detection-des-pannes">Détection des pannes<a class="headerlink" href="#detection-des-pannes" title="Permanent link">⚓︎</a></h5>
+<p>Lorsqu’un routeur ne reçoit pas de réponse de la part d’un autre routeur à une demande RIP (après un certain laps de temps, 3 minutes), il considère que le routeur en question est en panne.</p>
+<p>Afin qu’aucun paquet ne soit plus dirigé dans cette direction, il prévient ses voisins en leur envoyant une <strong>métrique égale à 16</strong> (plus grande valeur possible pour le protocole RIP) concernant toutes les routes passant par le routeur qui ne répond pas.</p>
+<h5 id="boucle-de-routage">Boucle de routage<a class="headerlink" href="#boucle-de-routage" title="Permanent link">⚓︎</a></h5>
+<p>Une boucle de routage est le phénomène qui se produit lorsqu’un paquet tourne en boucle et ne peut jamais atteindre sa destination.</p>
+<p>Différentes règles dans le protocole RIP permettent d’éviter que cela se produise, et notamment la règle split horizon, qui interdit à un routeur d’envoyer une information de routage via le routeur qui lui a envoyé.</p>
+<p>Le protocole RIP est aujourd’hui très rarement utilisé dans les grandes infrastructures car il génère, du fait de l’envoi périodique de messages, un trafic réseau important (surtout si les tables de routages contiennent beaucoup d’entrées). De plus, le protocole RIP est limité à 15 sauts (on traverse au maximum 15 routeurs pour atteindre sa destination). On lui préfère donc souvent le protocole OSPF.</p>
+<div class="admonition note">
+<p class="admonition-title">Remarques concernant la métrique</p>
+<p>Au sens du protocole RIP, La <strong>métrique</strong> ou <strong>distance</strong> d'un routeur à un réseau de destination est le <strong>nombre de sauts</strong> (de routeurs) ou <strong>hops</strong> <img alt="🇬🇧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" title=":gb:" /> qui le séparent de ce réseau, càd le nombre de routeurs devant être traversés/sautés pour parvenir au réseau.
+Dans le protocole RIP, la distance est un nombre entier compris entre 1 et 15 inclus.</p>
+<ul>
+<li>Une distance égale à 1 signifie que le réseau de destination est directement connecté.</li>
+<li>Une distance égale à 16 représente l'infini, donc que le réseau de destination n'est pas atteignable.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Remarques et inconvénients</p>
+<ul>
+<li>Le protocole RIP n'admet qu'une distance maximale égale à 15 (ceci explique que 16 soit considéré comme la distance infinie), ce qui le limite aux réseaux de petite taille.</li>
+<li>Chaque routeur n'a jamais connaissance de la topologie du réseau tout entier : il ne le connaît que par ce que les autres routeurs lui ont raconté. On dit que ce protocole de routage est du routing by rumor.</li>
+<li>La métrique utilisée (le nombre de sauts) ne tient pas compte de la qualité de la liaison, contrairement au protocole OSPF.</li>
+</ul>
+</div>
+<h3 id="22-protocole-ospf">2.2 protocole OSPF<a class="headerlink" href="#22-protocole-ospf" title="Permanent link">⚓︎</a></h3>
+<p>Le protocole OSPF : <em>Open Shortest Path First</em> <img alt="🇬🇧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" title=":gb:" /> rentre dans la catégorie plus générale des protocoles à États de Lien.</p>
+<p>Explication : Un inconvénient majeur du protocole précédent est la non-prise en compte de la bande passante reliant les routeurs.</p>
+<div class="admonition abstract">
+<p class="admonition-title">principe fondamental du protocole OSPF <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<p>Le chemin le plus rapide n'est pas forcément le plus court.</p>
+</div>
+<p><img alt="image" class="center" src="../img/maps.png" width="40%" /></p>
+<div>
+<center>
+<i>
+En gris, le chemin RIP. En bleu, l'OSPF.
+</i>
+</center>
+</div>
 
+<p>Donc dans le protocole OSPF, les tables de routage vont prendre en considération la vitesse de communication entre les routeurs.</p>
+<p>Dans une première phase d'initialisation, chaque routeur va acquérir (par succession de messages envoyés et reçus) la connaissance <strong>totale</strong> du réseau (différence fondamentale avec RIP) et de la qualité technique de la liaison entre chaque routeur.</p>
+<h4 id="les-differents-types-de-liaison-et-leur-cout">Les différents types de liaison et leur coût<a class="headerlink" href="#les-differents-types-de-liaison-et-leur-cout" title="Permanent link">⚓︎</a></h4>
+<p>On peut, approximativement, classer les types de liaison suivant ce tableau de débits <strong>théoriques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Technologie</th>
+<th>BP descendante</th>
+<th>BP montante</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modem</td>
+<td>56 kbit/s</td>
+<td>48 kbit/s</td>
+</tr>
+<tr>
+<td>Bluetooth</td>
+<td>3 Mbit/s</td>
+<td>3 Mbit/s</td>
+</tr>
+<tr>
+<td>Ethernet</td>
+<td>10 Mbit/s</td>
+<td>10 Mbit/s</td>
+</tr>
+<tr>
+<td>Wi-Fi</td>
+<td>10 Mbit/s ~ 10 Gbits/s</td>
+<td>10 Mbit/s ~ 10 Gbits/s</td>
+</tr>
+<tr>
+<td>ADSL</td>
+<td>13 Mbit/s</td>
+<td>1 Mbit/s</td>
+</tr>
+<tr>
+<td>4G</td>
+<td>100 Mbit/s</td>
+<td>50 Mbit/s</td>
+</tr>
+<tr>
+<td>Satellite</td>
+<td>50 Mbit/s</td>
+<td>1 Mbit/s</td>
+</tr>
+<tr>
+<td>Fast Ethernet</td>
+<td>100 Mbit/s</td>
+<td>100 Mbit/s</td>
+</tr>
+<tr>
+<td>FFTH (fibre)</td>
+<td>10 Gbit/s</td>
+<td>10 Gbit/s</td>
+</tr>
+<tr>
+<td>5G</td>
+<td>20 Gbit/s</td>
+<td>10 Gbit/s</td>
+</tr>
+</tbody>
+</table>
+<p>L'idée du protocole OSPF est de pondérer chaque trajet entre routeurs (comptant simplement pour «1» dans le protocole RIP) par une valeur de <strong>coût</strong> inversement proportionnelle au débit de transfert.</p>
+<p>Par exemple, si le débit <span class="arithmatex">\(d\)</span> est exprimé en bits/s, on peut calculer le coût de chaque liaison par la formule :</p>
+<div class="arithmatex">\[ \text{coût} = \frac{10^8}{d} \]</div>
+<p>Cette formule de calcul peut être différente suivant les exercices, et sera systématiquement redonnée. Néanmoins la valeur <span class="arithmatex">\(d\)</span> sera toujours au dénominateur, pour assurer la proportionnalité inverse du débit.</p>
+<p>Avec cette convention, un route entre deux routeurs reliés en Fast Ethernet (100 Mbits/s) aura a un poids de 1, une liaison satellite de 20 Mbits/s aura un poids de 5, etc.</p>
+<h4 id="exemple_1">Exemple<a class="headerlink" href="#exemple_1" title="Permanent link">⚓︎</a></h4>
+<p>Reprenons le réseau suivant :</p>
+<p><img alt="image" class="center" src="../img/tables.png" width="60%" /></p>
+<p>et simplifions-le en ne gardant que les liens entre routeurs, en indiquant leur débit :</p>
+<p><img alt="image" class="center" src="../img/ospf1.png" width="60%" /></p>
+<p>Notre réseau est devenu un <strong>graphe</strong>. </p>
+<p>Nous allons pondérer ses arêtes avec la fonction coût introduite précédemment. L'unité étant le Mbit/s, l'arête entre R1 et R3 aura un poids de <span class="arithmatex">\(\frac{100}{20}=5\)</span>.</p>
+<p>Le graphe pondéré est donc :</p>
+<p><img alt="image" class="center" src="../img/ospf2.png" width="60%" /></p>
+<p>Le chemin le plus rapide pour aller de l'ordinateur au serveur est donc R1-R2-R4, et non plus R1-R3 comme l'aurait indiqué le protocole RIP.</p>
+<h3 id="trouver-le-plus-court-chemin-dans-un-graphe-pondere">Trouver le plus court chemin dans un graphe pondéré<a class="headerlink" href="#trouver-le-plus-court-chemin-dans-un-graphe-pondere" title="Permanent link">⚓︎</a></h3>
+<p>L'exemple précédent était très simple et de solution intuitive. Dans le cas d'un graphe pondéré complexe, existe-t-il un algorithme de détermination du plus court chemin d'un point à un autre ?</p>
+<p>La réponse est <strong>oui</strong>, depuis la découverte en 1959 par Edsger Dijkstra de l'algorithme qui porte son nom, <strong>l'algorithme de Dijkstra</strong>.</p>
+<p>Pour le comprendre, vous pouvez regarder la vidéo d'un célèbre YouTuber :</p>
+<p align="center">
+<iframe width="790" height="372" src="https://www.youtube.com/embed/rI-Rc7eF4iw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
+<p>Cet algorithme, ici exécuté de manière manuelle, est bien sûr programmable. Et c'est donc grâce à lui que chaque routeur calcule la route la plus rapide pour acheminer les données qu'il reçoit.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Exercice d'application de l'algorithme de Dijkstra (HP)</p>
+<p>Donner le plus court chemin pour aller de E à F dans le graphe ci-dessous :
+<img alt="image" class="center" src="../img/graph.png" width="60%" /></p>
+<details class="tip">
+<summary>correction</summary>
+<table>
+<thead>
+<tr>
+<th align="center">E</th>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+<th align="center">D</th>
+<th align="center">F</th>
+<th align="center">Choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>0</strong></td>
+<td align="center">--</td>
+<td align="center">--</td>
+<td align="center">--</td>
+<td align="center">--</td>
+<td align="center">--</td>
+<td align="center">E(0)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">30vE</td>
+<td align="center">--</td>
+<td align="center">40vE</td>
+<td align="center"><strong>10vE</strong></td>
+<td align="center">--</td>
+<td align="center">D(10)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center"><strong>20vD</strong></td>
+<td align="center">--</td>
+<td align="center">40vE</td>
+<td align="center">.</td>
+<td align="center">80vD</td>
+<td align="center">A(20)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">60vA</td>
+<td align="center"><strong>30vA</strong></td>
+<td align="center">.</td>
+<td align="center">80vD</td>
+<td align="center">C(30)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center"><strong>50vC</strong></td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">80vD</td>
+<td align="center">B(50)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center"><strong>70vB</strong></td>
+<td align="center">F(70)</td>
+</tr>
+</tbody>
+</table>
+<p>Le meilleur trajet est donc E-D-A-C-B-F.<br />
+Attention ce trajet correspond à la colonne choix (dans l'ordre) mais c'est un hasard.</p>
+</details>
+</div>
+<h2 id="3-exercices">3. Exercices<a class="headerlink" href="#3-exercices" title="Permanent link">⚓︎</a></h2>
+<h3 id="extrait-du-sujet-0-bac">extrait du sujet 0 - BAC<a class="headerlink" href="#extrait-du-sujet-0-bac" title="Permanent link">⚓︎</a></h3>
+<p>On considère le réseau suivant :</p>
+<p><img alt="image" class="center" src="../img/ex3.png" width="40%" /></p>
+<p>On rappelle que le coût d’une liaison est donné par la formule suivante :</p>
+<div class="arithmatex">\[ \text{coût} = \frac{10^8}{d} \]</div>
+<p><strong>Question 1</strong></p>
+<ol>
+<li>Vérifier que le coût de la liaison entre les routeurs A et B est 0,01.</li>
+<li>La liaison entre le routeur B et D a un coût de 5. Quel est le débit de cette liaison ?</li>
+</ol>
+<p><strong>Question 2</strong></p>
+<p>Le routeur A doit transmettre un message au routeur G, en empruntant le chemin dont la somme des coûts sera la plus petite possible. Déterminer le chemin parcouru. On indiquera le raisonnement utilisé.</p>
+<details class="tip">
+<summary>Correction</summary>
+<p><strong>Q1</strong><br />
+1. <span class="arithmatex">\(\text{coût} = \dfrac{10^8}{10 \times 10^9}= \dfrac{10^8}{10^{10}}= 10^{-2}=0,01\)</span><br />
+2. <span class="arithmatex">\(5=\dfrac{10^8}{d}\)</span> donc <span class="arithmatex">\(d=\dfrac{10^8}{5}=20 \times 10^6\)</span> = 20 Mb/s</p>
+<p><strong>Q2</strong>
+Le graphe pondéré par les coûts est :
+<img alt="image" class="center" src="../img/ex3_corr.png" /></p>
+<p>On peut y deviner le chemin de coût minimal entre A et G, qui est A-D-E-G (coût 1,011).<br />
+Pour le justifier, on peut (non obligatoire) faire un algorithme de Dijkstra :
+<img alt="image" class="center" src="../img/corr_tab.png" /></p>
+</details>
+<h3 id="2021-sujet-metropole-1">2021, sujet Métropole 1<a class="headerlink" href="#2021-sujet-metropole-1" title="Permanent link">⚓︎</a></h3>
+<p>On représente ci-dessous un réseau dans lequel R1, R2, R3, R4, R5 et R6 sont des routeurs. Le réseau local L1 est relié au routeur R1 et le réseau local L2 au routeur R6.
+```</p>
+<p><img alt="image" class="center" src="../img/bac1.png" width="70%" /></p>
+<p>Dans cet exercice, les adresses IP sont composées de 4 octets, soit 32 bits. Elles sont notées X1.X2.X3.X4, où X1, X2, X3 et X4 sont les valeurs des 4 octets, convertis en notation décimale.
+La notation X1.X2.X3.X4/n signifie que les n premiers bits de poids forts de l’adresse IP représentent la partie « réseau », les bits suivants représentent la partie « hôte ».
+Toutes les adresses des hôtes connectés à un réseau local ont la même partie réseau et peuvent donc communiquer directement. L’adresse IP dont tous les bits de la partie « hôte » sont à 0 est appelée « adresse du réseau ».</p>
+<p>On donne également des extraits de la table de routage des routeurs R1 à R5 dans le tableau suivant :</p>
+<p><img alt="image" class="center" src="../img/bac2.png" width="70%" /></p>
+<p><strong>Question 1</strong></p>
+<p>Un paquet part du réseau local L1 à destination du réseau local L2.</p>
+<p>1.a. En utilisant l’extrait de la table de routage de R1, vers quel routeur R1 envoie-t-il ce paquet : R2 ou R3 ? Justifier.</p>
+<p>1.b. A l’aide des extraits de tables de routage ci-dessus, nommer les routeurs traversés par ce paquet, lorsqu’il va du réseau L1 au réseau L2.</p>
+<p><strong>Question 2</strong></p>
+<p>La liaison entre R1 et R2 est rompue.</p>
+<p>2.a. Sachant que ce réseau utilise le protocole RIP (distance en nombre de sauts), donner l’un des deux chemins possibles que pourra suivre un paquet allant de L1 vers L2.</p>
+<p>2.b. Dans les extraits de tables de routage ci-dessus, pour le chemin de la question 2.a, quelle(s) ligne(s) sera (seront) modifiée(s) ?</p>
+<p><strong>Question 3</strong></p>
+<p>On a rétabli la liaison entre R1 et R2.
+Par ailleurs, pour tenir compte du débit des liaisons, on décide d’utiliser le
+protocole OSPF (distance liée au coût minimal des liaisons) pour effectuer le
+routage. Le coût des liaisons entre les routeurs est donné par le tableau suivant :</p>
+<p><img alt="image" class="center" src="../img/bac3.png" width="90%" /></p>
+<p>3.a. Le coût <em>C</em> d’une liaison est donné ici par la formule
+<span class="arithmatex">\(C = \dfrac{10^9}{BP}\)</span></p>
+<p>où <span class="arithmatex">\(BP\)</span> est la bande passante de la connexion en bps (bits par seconde).
+Sachant que la bande passante de la liaison R2-R3 est de 10 Mbps, calculer le coût correspondant.</p>
+<p>3.b. Déterminer le chemin parcouru par un paquet partant du réseau L1 et arrivant au réseau L2, en utilisant le protocole OSPF.</p>
+<p>3.c. Indiquer pour quel(s) routeur(s) l’extrait de la table de routage sera modifié pour un paquet à destination de L2, avec la métrique OSPF.</p>
+<details class="tip">
+<summary>Correction</summary>
+<p>1.a. D'après la table, R1 doit passer par la passerelle 86.154.10.1 qui correspond au routeur R2.<br />
+1.b. Le paquet va traverser R1, R2, R6 avant d'arriver à L2.<br />
+2.a. RIP doit minimiser le nombre de sauts, donc les deux chemins minimaux possibles sont R1-R3-R4-R6 et R1-R3-R2-R6.<br />
+2.b. La ligne R1 sera modifiée, il faudra partir vers R3 (et son réseau 112.44.65.0/24). Les autres lignes n'ont pas à être modifiées puisque R3 amène en R4 qui amène en R6.<br />
+3.a <span class="arithmatex">\(\dfrac{10^9}{10 \times 10^6}=100\)</span> donc le coût R2-R3 est 100.<br />
+3.b. Avec OSPF, le chemin qui minimise le coût est le chemin R1-R2-R4-R5-R6 (coût 103) :
+<img alt="image" class="center" src="../img/bac1_corr.png" width="50%" />
+3.c. Dans la table de routage initiale, il faut modifier R2 pour qu'elle envoie sur R4 (et non sur R6), mais aussi R4 pour qu'elle envoie sur R5 (et non sur R6).</p>
+</details>
+<details class="note">
+<summary>Sites utilisés et sources</summary>
+<ul>
+<li><a href="https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.3_Protocoles_de_routage/cours/">https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.3_Protocoles_de_routage/cours/</a></li>
+<li><a href="https://eskool.gitlab.io/tnsi/reseaux/">https://eskool.gitlab.io/tnsi/reseaux/</a></li>
+<li><a href="https://info.blaisepascal.fr/nsi-protocoles-de-routage#Topologie_dun_reseau">https://info.blaisepascal.fr/nsi-protocoles-de-routage</a></li>
+<li><a href="https://cisco.goffinet.org/ccna/">https://cisco.goffinet.org/ccna/</a></li>
+<li>Numérique et Sciences Informatiques, Terminale, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.</li>
+<li>Prépabac NSI, Terminale, G. CONNAN, V. PETROV, G. ROZSAVOLGYI, L. SIGNAC, éditions HATIER.</li>
+</ul>
+</details>
 
               
     <script src="../../../js/ide.js"></script> 
@@ -786,6 +1665,8 @@
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
       
     
   </body>
